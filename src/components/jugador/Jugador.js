@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Content extends Component {
+class Jugador extends Component {
   constructor(props) {
     super(props);
 
@@ -11,11 +11,11 @@ class Content extends Component {
     console.log(this.props.match.params.jugador);
     return (
       <div>
-        Content
+        Jugador
         <p>{this.props.match.params.jugador}</p>
       </div>
     );
   }
 }
 
-export default Content;
+export default Jugador;
