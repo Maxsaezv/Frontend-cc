@@ -11,24 +11,20 @@ export default class Tabla extends Component {
   render() {
     return (
       <MaterialTable
-        style={{ minWidth: "85%", fontSize: "1.2rem" }}
+        style={{ minWidth: "85%" }}
         title=""
         tableRef={this.tableRef}
         columns={[
-          { title: "Posición", field: "position" },
+          { title: "Posición", field: "position", cellStyle: { fontSize: 18 } },
           { title: "Nombre", field: "nombre" },
           { title: "Edad", field: "edad", type: "numeric" },
-
-          {
-            title: "status",
-            field: "status"
-          }
+          { title: "Status", field: "status" }
         ]}
         data={[
-          { nombre: "Leo", position: "PO", edad: 24, status: "Disponible" },
-          { nombre: "Diego", position: "PO", edad: 24, status: "Reintegro" },
-          { nombre: "Yerson", position: "PO", edad: 24, status: "Lesionado" },
-          { nombre: "Maxi", position: "PO", edad: 24, status: "Disponible" }
+          { nombre: "Leo", position: "PO", edad: 18, status: "Disponible" },
+          { nombre: "Diego", position: "DF", edad: 20, status: "Reintegro" },
+          { nombre: "Yerson", position: "MC", edad: 23, status: "Lesionado" },
+          { nombre: "Maxi", position: "DL", edad: 26, status: "Disponible" }
         ]}
         options={{
           actionsColumnIndex: -1,
@@ -40,7 +36,8 @@ export default class Tabla extends Component {
                 : rowData.status === "Reintegro"
                 ? "lightyellow"
                 : "#FF5A55"
-          })
+          }),
+          headerStyle: { fontSize: 18 }
         }}
         actions={[
           {
