@@ -9,12 +9,16 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
 // Generate Sales Data
-function createData(id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos) {
-  return { id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos  };
+function createData(id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos, DolorToracico
+  , SincopeLipotimia, DisneaDesproporcionada, AntecedenteSoplo, AntecedenteHipertension) {
+  return { id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos,
+     DolorToracico, SincopeLipotimia, DisneaDesproporcionada, AntecedenteSoplo, AntecedenteHipertension  };
 }
 
 const rows = [
-  createData(0, 'DataEnfermedad', 'DataCirugía','DataHospitalizaciones', 'DataAlergias', 'DataLesiones', 'DataMedicamentos/Suplementos'),
+  createData(0, 'DataEnfermedad', 'DataCirugía','DataHospitalizaciones', 'DataAlergias', 'DataLesiones',
+   'DataMedicamentos/Suplementos','Data DolorToracico', 'Data Sincope/lipotimia', 'Data Disnea Desproporcionada'
+   , 'Data Antecedente Soplo Cardiaco', 'Data Antecedente Hipertensión Arterial'),
 
 ];
 
@@ -95,6 +99,67 @@ export default function Orders() {
           ))}
             </TableCell>
           </TableRow>
+
+          <TableRow>
+            <TableCell> <b><p> HISTORIA CARDIOVASCULAR </p></b></TableCell>
+          </TableRow>
+
+
+          <TableRow>
+            <TableCell>Dolor/disconfort torácico con ejercicio:</TableCell>
+            <TableCell>
+            {rows.map(row => (
+            <TableRow key={row.id}>
+              <TableCell>{row.DolorToracico}</TableCell>
+            </TableRow>
+          ))}
+            </TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell>Síncope/Lipotimia:</TableCell>
+            <TableCell>
+            {rows.map(row => (
+            <TableRow key={row.id}>
+              <TableCell>{row.SincopeLipotimia}</TableCell>
+            </TableRow>
+          ))}
+            </TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell>Disnea/Fatiga desproporcionada con ejercicio:</TableCell>
+            <TableCell>
+            {rows.map(row => (
+            <TableRow key={row.id}>
+              <TableCell>{row.DisneaDesproporcionada}</TableCell>
+            </TableRow>
+          ))}
+            </TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell>Antecedentes de soplo cardiaco:</TableCell>
+            <TableCell>
+            {rows.map(row => (
+            <TableRow key={row.id}>
+              <TableCell>{row.AntecedenteSoplo}</TableCell>
+            </TableRow>
+          ))}
+            </TableCell>
+          </TableRow>
+
+          <TableRow>
+            <TableCell>Antecedentes de Hipertensión Arterial:</TableCell>
+            <TableCell>
+            {rows.map(row => (
+            <TableRow key={row.id}>
+              <TableCell>{row.AntecedenteHipertension}</TableCell>
+            </TableRow>
+          ))}
+            </TableCell>
+          </TableRow>
+
         </TableHead>
         <TableBody>
           {rows.map(row => (

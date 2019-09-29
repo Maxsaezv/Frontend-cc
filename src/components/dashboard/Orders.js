@@ -9,12 +9,15 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
 // Generate Sales Data
-function createData(id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos) {
-  return { id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos  };
+function createData(id, Peso, Estatura, RitmoCardiaco, FrecuenciaCardiaca, Soplos, PulsosPerifericos, EstigmasMarfan, PresionArerial, FaringeAmigdalas, 
+  Pulmonar, Abdomen, Hernias, MusculoEsqueletico) {
+  return { id, Peso, Estatura, RitmoCardiaco, FrecuenciaCardiaca, Soplos, PulsosPerifericos, EstigmasMarfan, PresionArerial,
+  FaringeAmigdalas, Pulmonar, Abdomen, Hernias, MusculoEsqueletico  };
 }
 
 const rows = [
-  createData(0, 'DataEnfermedad', 'DataCirugía','DataHospitalizaciones', 'DataAlergias', 'DataLesiones', 'DataMedicamentos/Suplementos'),
+  createData(0, 'data Peso', 'Data Estatura','Data RitmoCardiaco', 'Data Frecuencia Cardiaca', 'Data Soplos', 'Data Pulsos Perifericos', 'Data Estigas de SdMarfán'
+  , 'Data Presion Arterial', 'Data Faringe/Amigdalas', 'Data Pulmonar', 'Data Abdomen', 'Data Hernias', 'Data Musculo Esqueletico'),
 
 ];
 
@@ -40,7 +43,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.enfermedadprevia}</TableCell>
+              <TableCell>{row.Peso}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -50,7 +53,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.cirugia}</TableCell>
+              <TableCell>{row.Estatura}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -60,7 +63,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.hospitalizaciones}</TableCell>
+              <TableCell>{row.RitmoCardiaco}</TableCell>
             </TableRow>
           ))}
           </TableCell>
@@ -70,7 +73,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.alergias}</TableCell>
+              <TableCell>{row.FrecuenciaCardiaca}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -80,7 +83,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.Soplos}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -90,7 +93,7 @@ export default function Orders() {
             <TableCell > 
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.medicamentos}</TableCell>
+              <TableCell>{row.PulsosPerifericos}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -101,7 +104,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.EstigmasMarfan}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -112,7 +115,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.PresionArerial}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -123,7 +126,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.FaringeAmigdalas}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -134,7 +137,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.Pulmonar}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -145,7 +148,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.Abdomen}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -156,7 +159,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.Hernias}</TableCell>
             </TableRow>
           ))}
             </TableCell>
@@ -168,7 +171,7 @@ export default function Orders() {
             <TableCell>
             {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
+              <TableCell>{row.MusculoEsqueletico}</TableCell>
             </TableRow>
           ))}
             </TableCell>
