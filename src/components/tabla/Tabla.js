@@ -18,6 +18,8 @@ export default class Tabla extends Component {
           { title: "Posición", field: "position" },
           { title: "Nombre", field: "nombre" },
           { title: "Edad", field: "edad", type: "numeric" },
+          { title: "Ejemplo", field: "ejemplo"},
+      
 
           {
             title: "status",
@@ -25,10 +27,10 @@ export default class Tabla extends Component {
           }
         ]}
         data={[
-          { nombre: "Leo", position: "PO", edad: 24, status: "Disponible" },
-          { nombre: "Diego", position: "PO", edad: 24, status: "Reintegro" },
-          { nombre: "Yerson", position: "PO", edad: 24, status: "Lesionado" },
-          { nombre: "Maxi", position: "PO", edad: 24, status: "Disponible" }
+          { nombre: "Leo", position: "PO", edad: 24, ejemplo: "kappita", status: "Disponible" },
+          { nombre: "Diego", position: "PO", edad: 24, ejemplo: "kappita", status: "Reintegro" },
+          { nombre: "Yerson", position: "PO", edad: 24, ejemplo: "kappita", status: "Lesionado" },
+          { nombre: "Maxi", position: "PO", edad: 24, ejemplo: "kappita", status: "Disponible" }
         ]}
         options={{
           actionsColumnIndex: -1,
