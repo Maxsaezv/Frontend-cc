@@ -16,7 +16,7 @@ function createData(id, Peso, Estatura, RitmoCardiaco, FrecuenciaCardiaca, Soplo
 }
 
 const rows = [
-  createData(0, 'data Peso', 'Data Estatura','Data RitmoCardiaco', 'Data Frecuencia Cardiaca', 'Data Soplos', 'Data Pulsos Perifericos', 'Data Estigas de SdMarfán'
+  createData(0, 'Data Peso', 'Data Estatura','Data RitmoCardiaco', 'Data Frecuencia Cardiaca', 'Data Soplos', 'Data Pulsos Perifericos', 'Data Estigas de SdMarfán'
   , 'Data Presion Arterial', 'Data Faringe/Amigdalas', 'Data Pulmonar', 'Data Abdomen', 'Data Hernias', 'Data Musculo Esqueletico'),
 
 ];
@@ -36,145 +36,108 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell> <b> Interrogante Médica</b></TableCell>
-            <TableCell><b>Resultado</b></TableCell>
+            <TableCell align= 'center'><b>Resultado</b></TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Peso:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Peso}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Peso}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Estatura:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Estatura}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Estatura}</TableCell>
           ))}
-            </TableCell>
             </TableRow>
+
+
           <TableRow>
             <TableCell>Ritmo Cardiaco:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.RitmoCardiaco}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.RitmoCardiaco}</TableCell>
           ))}
-          </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Frecuencia Cardiaca</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.FrecuenciaCardiaca}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.FrecuenciaCardiaca}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Soplos:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Soplos}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Soplos}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Pulsos Periféricos:</TableCell>
-            <TableCell > 
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.PulsosPerifericos}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.PulsosPerifericos}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
         <TableRow>
             <TableCell>Estigmas de Sd. Marfán:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.EstigmasMarfan}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.EstigmasMarfan}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>Presión Arterial:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.PresionArerial}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.PresionArerial}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Faringe / Amígdalas:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.FaringeAmigdalas}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.FaringeAmigdalas}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Pulmonar:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Pulmonar}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Pulmonar}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Abdomen:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Abdomen}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Abdomen}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>Hernias:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.Hernias}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.Hernias}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
 
           <TableRow>
-            <TableCell>Musculo Esquelético:
-            </TableCell>
-            <TableCell>
+            <TableCell>Musculo Esquelético:</TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.MusculoEsqueletico}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.MusculoEsqueletico}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
           </TableHead>
 

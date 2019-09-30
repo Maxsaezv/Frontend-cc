@@ -33,38 +33,31 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell> <b> Interrogante Médica</b></TableCell>
-            <TableCell><b>Resultado</b></TableCell>
+            <TableCell align= 'center'><b>Resultado</b></TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Muerte súbita (cardiovascular) en familiares de primer grado (padres, hermanos, tíos): </TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.MuerteSubita}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.MuerteSubita}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Enfermedad cardiaca que cause discapacidad en familiares de primer grado:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.ECardiacaDisc}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.ECardiacaDisc}</TableCell>
           ))}
-            </TableCell>
             </TableRow>
+
+
           <TableRow>
             <TableCell>Enfermedad cardiaca conocida en familiares (miocardiopatía, arritmias, canalopatías, Sd Marfán): </TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.ECardiacaConoc}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.ECardiacaConoc}</TableCell>
           ))}
-      
-            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

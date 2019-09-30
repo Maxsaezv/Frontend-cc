@@ -41,73 +41,52 @@ export default function Orders() {
             <TableCell align ='center'><b>Resultado</b></TableCell>
           </TableRow>
           
-          {/* Cambio  */}
+
           <TableRow>
-            <TableCell >Enfermedades Previas:</TableCell>
+            <TableCell>Enfermedades Previas:</TableCell>
             {rows.map(row => (
               <TableCell align= 'center'>{row.enfermedadprevia}</TableCell>
           ))}
           </TableRow>
 
-          <TableRow>
-            <TableCell>Enfermedades Previas:</TableCell>
-            <TableCell>
-            {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.enfermedadprevia}</TableCell>
-            </TableRow>
-          ))}
-            </TableCell>
-          </TableRow>
+
           <TableRow>
             <TableCell>Cirugía:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.cirugia}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.cirugia}</TableCell>
           ))}
-            </TableCell>
             </TableRow>
+
+
           <TableRow>
             <TableCell>Hospitalizaciones:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.hospitalizaciones}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.hospitalizaciones}</TableCell>
           ))}
-          </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Alergias:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.alergias}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.alergias}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Lesiones graves previas (>1 mes sin jugar):</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.lesiones}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.lesiones}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
+
           <TableRow>
             <TableCell>Medicamentos / Suplementos:</TableCell>
-            <TableCell > 
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.medicamentos}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.medicamentos}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
 
           <TableRow>
@@ -117,58 +96,42 @@ export default function Orders() {
 
           <TableRow>
             <TableCell>Dolor/disconfort torácico con ejercicio:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.DolorToracico}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.DolorToracico}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Síncope/Lipotimia:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.SincopeLipotimia}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.SincopeLipotimia}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>Disnea/Fatiga desproporcionada con ejercicio:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.DisneaDesproporcionada}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.DisneaDesproporcionada}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Antecedentes de soplo cardiaco:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.AntecedenteSoplo}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.AntecedenteSoplo}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
           <TableRow>
             <TableCell>Antecedentes de Hipertensión Arterial:</TableCell>
-            <TableCell>
             {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.AntecedenteHipertension}</TableCell>
-            </TableRow>
+              <TableCell align= 'center'>{row.AntecedenteHipertension}</TableCell>
           ))}
-            </TableCell>
           </TableRow>
+
 
         </TableHead>
         <TableBody>

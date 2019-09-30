@@ -19,9 +19,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './listItems';
 //import { secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import HMPersonal from './HMPersonal';
+import HMFamiliar from './HMFamiliar';
+import ExFisico from './ExFisico';
 
 function Copyright() {
   return (
@@ -175,19 +175,19 @@ export default function Dashboard() {
             {/* Chart */}
             <Grid item xs={12} md={8} lg={12}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <HMPersonal />
               </Paper>
             </Grid>
             {/* Recent Deposits */}
             <Grid item xs={12} md={8} lg={12}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <HMFamiliar />
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <ExFisico />
               </Paper>
             </Grid>
           </Grid>
