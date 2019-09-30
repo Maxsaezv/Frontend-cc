@@ -37,8 +37,18 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell> <b> Interrogante Médica</b></TableCell>
-            <TableCell><b>Resultado</b></TableCell>
+            {/* <TableCell ><b>Resultado</b></TableCell> */}
+            <TableCell align ='center'><b>Resultado</b></TableCell>
           </TableRow>
+          
+          {/* Cambio  */}
+          <TableRow>
+            <TableCell >Enfermedades Previas:</TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.enfermedadprevia}</TableCell>
+          ))}
+          </TableRow>
+
           <TableRow>
             <TableCell>Enfermedades Previas:</TableCell>
             <TableCell>
