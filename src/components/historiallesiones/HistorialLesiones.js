@@ -17,12 +17,10 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
+import { mainListItems } from '../dashboard/listItems';
 //import { secondaryListItems } from './listItems';
-import HMPersonal from './HMPersonal';
-import HMFamiliar from './HMFamiliar';
-import ExFisico from './ExFisico';
-import './Dashboard.css';
+import Tablita from './Tablita'
+
 
 function Copyright() {
   return (
@@ -132,22 +130,21 @@ export default function Dashboard() {
 
   return (
     <div className={classes.root}>
-      
       <CssBaseline />
-           <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
-              <Toolbar className={classes.className}>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-                >
-                 <MenuIcon />
-             </IconButton>
-            <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-              Dashboard
-            </Typography>
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+            Dashboard
+          </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
@@ -155,7 +152,7 @@ export default function Dashboard() {
           </IconButton>
         </Toolbar>
       </AppBar>
-    <div className='Toolbar'>
+      <div className='Toolbar'>
       <Drawer
         variant="permanent"
         classes={{
@@ -172,30 +169,15 @@ export default function Dashboard() {
         <List>{mainListItems}</List>
         <Divider />
       </Drawer>
-    </div>
+      </div>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* HMPersonal */}
-            <Grid item xs={12}>
+        <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <HMPersonal />
+                <Tablita />
               </Paper>
             </Grid>
-            {/* Historia Médica Familiar */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <HMFamiliar />
-              </Paper>
-            </Grid>
-            {/* Examen Físico */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <ExFisico />
-              </Paper>
-            </Grid>
-          </Grid>
         </Container>
         <Copyright />
       </main>

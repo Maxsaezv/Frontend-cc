@@ -1,0 +1,11 @@
+.ConjuntoPerfil, .InfoPerfil {
+  width: 70%;
+  display: flex;
+  left:0;
+  }
+
+.Toolbar, .Tulbar{
+    position: fixed;
+    left:0;
+
+}

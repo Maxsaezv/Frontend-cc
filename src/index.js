@@ -12,6 +12,8 @@ import Notfound from "./components/notfound/notFound";
 import Jugador from "./components/jugador/Jugador";
 import Informe from "./components/informe/Informe";
 import Dashboard from "./components/dashboard/Dashboard";
+import HistorialLesiones from "./components/historiallesiones/HistorialLesiones";
+import PerfilJugador from "./components/perfil/PerfilJugador";
 
 // ReactDOM.render( <App/> , document.getElementById('root'));
 
@@ -26,9 +28,10 @@ const routing = (
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/plantel" component={Plantel} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route path="/plantel/:jugador" component={Jugador} />
-          <Route path="/plantel/informe" component={Informe} />
+          <Route exact path="/fichamedicajugador" component={Dashboard} />
+          <Route path="/jugador" component={PerfilJugador} />
+          <Route path="/plantel/informe" component={Dashboard} />
+          <Route path="/historial" component={HistorialLesiones} />
           <Route component={Notfound} />
           
         </Switch>
