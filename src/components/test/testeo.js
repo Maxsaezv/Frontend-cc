@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import { mainListItems } from '../dashboard/listItems';
 //import { secondaryListItems } from './listItems';
-import HMPersonal from '../dashboard/HMPersonal';
-import HMFamiliar from '../dashboard/HMFamiliar';
-import ExFisico from '../dashboard/ExFisico';
+import Tablita from '../historiallesiones/Tablita';
 
 
 
@@ -60,29 +60,17 @@ export default function Dashboard() {
   return (
     <Grid container spacing ={3} >
       <Grid item xs={2}>
-        
         <List >{mainListItems}</List>
       </Grid>
       <Grid item xs = {10} align='center'>
-      
-            {/* HMPersonal */}
-            <Grid item xs={10} align='center' padding={8}>
-              <Paper className={classes.paper}>
-                <HMPersonal />
-              </Paper>
-            </Grid>
-            {/* Historia Médica Familiar */}
-            <Grid item xs={10}>
-              <Paper className={classes.paper}>
-                <HMFamiliar />
-              </Paper>
-            </Grid>
-            {/* Examen Físico */}
-            <Grid item xs={10}>
-              <Paper className={classes.paper}>
-                <ExFisico />
-              </Paper>
-            </Grid>
+         <div className={classes.appBarSpacer} />
+         <Container maxWidth="lg" className={classes.container}>
+           <Grid item xs={12}>
+                 <Paper className={classes.paper}>
+                   <Tablita />
+                 </Paper>
+               </Grid>
+           </Container>
          
       </Grid>
     </Grid>

@@ -40,7 +40,7 @@ export default function Orders() {
 
 
           <TableRow>
-            <TableCell><b>EDAD:</b></TableCell>
+            <TableCell><b>FECHA NACIMIENTO:</b></TableCell>
             {rows.map(row => (
               <TableCell align= 'center'>{row.Edad}</TableCell>
           ))}
@@ -55,14 +55,46 @@ export default function Orders() {
           </TableRow>
 
           <TableRow>
-            <TableCell><b>NÚMERO DE CAMISETA:</b></TableCell>
+            <TableCell><b>PIE:</b></TableCell>
             {rows.map(row => (
               <TableCell align= 'center'>{row.Camiseta}</TableCell>
           ))}
             </TableRow>
 
             <TableRow>
-            <TableCell><b>ESTADO ACTUAL:</b></TableCell>
+            <TableCell><b>PAÍS:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow>
+
+            <TableRow>
+            <TableCell><b>SANGRE:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow><TableRow>
+            <TableCell><b>DORSAL:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow><TableRow>
+            <TableCell><b>ISAPRE:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow><TableRow>
+            <TableCell><b>PESO:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow><TableRow>
+            <TableCell><b>ESTADO:</b></TableCell>
+            {rows.map(row => (
+              <TableCell align= 'center'>{row.Estado}</TableCell>
+          ))}
+            </TableRow><TableRow>
+            <TableCell><b>ESTATURA:</b></TableCell>
             {rows.map(row => (
               <TableCell align= 'center'>{row.Estado}</TableCell>
           ))}
