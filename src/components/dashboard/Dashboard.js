@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import { mainListItems } from '../dashboard/listItems';
@@ -58,32 +59,31 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <Grid container spacing ={3} >
+    <Grid container spacing ={1} >
       <Grid item xs={2}>
         
-        <List >{mainListItems}</List>
+        <List>{mainListItems}</List>
       </Grid>
-      <Grid item xs = {10} align='center'>
+      <Grid item xs={10} align='center'>
       
             {/* HMPersonal */}
-            <Grid item xs={10} align='center' padding={8}>
+            <Grid>
               <Paper className={classes.paper}>
                 <HMPersonal />
               </Paper>
             </Grid>
             {/* Historia Médica Familiar */}
-            <Grid item xs={10}>
+            <Grid>
               <Paper className={classes.paper}>
                 <HMFamiliar />
               </Paper>
             </Grid>
             {/* Examen Físico */}
-            <Grid item xs={10}>
+            <Grid>
               <Paper className={classes.paper}>
                 <ExFisico />
               </Paper>
             </Grid>
-         
       </Grid>
     </Grid>
 

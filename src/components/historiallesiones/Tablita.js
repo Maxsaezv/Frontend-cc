@@ -16,7 +16,7 @@ export default class Tablita extends Component {
   render() {
     return (
      <React.Fragment>
-       <Title>Historial de Lesiones</Title>
+       <Title >Historial de Lesiones</Title>
        <MaterialTable
          style={{ minWidth: "85%", fontSize: "2.0rem" }}
          title=""

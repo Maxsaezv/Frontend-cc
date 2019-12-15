@@ -144,8 +144,6 @@ export default function Orders() {
         <TableBody>
           {rows.map(row => (
             <TableRow key={row.id}>
-              <TableCell>{row.imedica}</TableCell>
-              <TableCell>{row.resultado}</TableCell>
             </TableRow>
           ))}
         </TableBody>
