@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import Link from "@material-ui/core/Link";
+import Typography from "@material-ui/core/Typography";
 
 class Footer extends Component {
-constructor(props) {
-  super(props)
-
-  this.state = {
-     
-  }
-}
-
   render() {
     return (
       <div>
-        Footer
+        <Typography variant="body2" color="textSecondary" align="center">
+          {"Copyright © "}
+          <Link color="inherit" href="https://material-ui.com/">
+            Your Website
+          </Link>{" "}
+          {new Date().getFullYear()}
+          {"."}
+        </Typography>
       </div>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

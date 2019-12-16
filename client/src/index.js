@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 ///
@@ -11,23 +11,30 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Landing from "./components/layout/Landing";
+import PrivateRoute from "./components/private-route/PrivateRoute";
 //////
-import Plantel from "./components/plantel/Plantel";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Notfound from "./components/notfound/notFound";
+import Plantel from "./components/plantel/Plantel";
 import Jugador from "./components/jugador/Jugador";
 import Informe from "./components/informe/Informe";
 import Dashboard from "./components/dashboard/Dashboard";
+import Notfound from "./components/notfound/notFound";
+///LEO CULIAO///
 import HistorialLesiones from "./components/historiallesiones/HistorialLesiones";
-import PerfilJugador from "./components/perfil/PerfilJugador";
-import testeo from "./components/test/testeo";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Resumen from "./components/resumen/Dashboard";
+import Resumen from "./components/resumen/Resumen";
+import Ficha from "./components/ficha/Ficha";///EX-DASHBOARD.LP
+////URLEY CULIAO/////
+import AddPlayer from "./components/ingreso/AddPlayer";
+
 // ReactDOM.render( <App/> , document.getElementById('root'));
+
+
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -61,14 +68,17 @@ const routing = (
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+
           <Route exact path="/plantel" component={Plantel} />
-          <Route exact path="/test" component={testeo} />
-          <Route path="/jugador" component={PerfilJugador} />
-          <Route path="/informe" component={Dashboard} />
+          <Route path="/plantel/ingreso" component={AddPlayer} />
+          <Route path="/plantel/:jugador" component={Jugador} />
+          <Route path="/plantel/informe" component={Informe} />
+          <Route path="/resumen" component={Resumen} />
+          <Route path="/informe" component={Informe} />
           <Route path="/historial" component={HistorialLesiones} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/resumen" component={Resumen} />
+              <PrivateRoute exact path="/ficha" component={Ficha} />
           </Switch>
           <Route component={Notfound} />
           
@@ -82,6 +92,7 @@ const routing = (
   </Router>
   </Provider>
 );
+
 
 ReactDOM.render(routing, document.getElementById("root"));
 

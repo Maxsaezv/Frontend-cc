@@ -7,6 +7,7 @@
     "@material-ui/icons": "^4.2.1",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
+    "mui-datatables": "^2.10.1",
     "jwt-decode": "^2.2.0",
     "material-table": "^1.50.0",
     "react": "^16.9.0",
@@ -17,7 +18,8 @@
     "react-scripts": "^3.3.0",
     "recharts": "^1.7.1",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "redux-bees": "^0.1.11"
   },
   "scripts": {
     "start": "react-scripts start",

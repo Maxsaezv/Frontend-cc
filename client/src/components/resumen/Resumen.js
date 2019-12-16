@@ -4,8 +4,9 @@ import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { mainListItems } from '../ficha/listItems';
-//import { secondaryListItems } from './listItems';
-import Tablita from '../historiallesiones/Tablita';
+import InfoPerfil from './InfoResumen';
+import './Resumen.css';
+
 
 const drawerWidth = 240;
 
@@ -32,23 +33,32 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Resumen() {
+export default function Dashboard() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing ={1} >
+    <Grid container spacing ={1}>
       <Grid item xs={2}>
         <List >{mainListItems}</List>
       </Grid>
 
+
       <Grid item xs = {10} align='center'>
          <div className={classes.appBarSpacer} />
+         
            <Grid>
                  <Paper className={classes.paper}>
-                   <Tablita />
+                   <InfoPerfil />
                  </Paper>
                </Grid>
+ 
+         
       </Grid>
+      
+
     </Grid>
+
 );
 }
+
+   

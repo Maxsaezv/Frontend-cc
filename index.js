@@ -1,6 +1,6 @@
 var express = require("express");
 const mongoose = require("mongoose");
-//var cors = require("cors");
+var cors = require("cors");
 var createError = require("http-errors");
 const bodyParser = require("body-parser");
 const passport = require("passport");
@@ -30,7 +30,7 @@ const users = require("./routes/api/users")
 // }
 
 
-//app.use(cors());
+
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -46,6 +46,9 @@ mongoose
 
 // initialize the app
 var app = express();
+
+//CORS
+app.use(cors());
 
 // Import Body parser
 app.use(

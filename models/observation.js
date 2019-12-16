@@ -5,9 +5,9 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 // Schema
 var schema = Schema(
   {
-    name:         { type: String, required: [true, 'Título es requerido']},
+    name:         { type: String, trim: true, required: [true, 'Título es requerido']},
     fecha:        { type: Date, default: Date.now()},
-    body:         { type: String},
+    body:         { type: String, trim: true },
     image:        { type: Object}, // IMAGEN
   },
   {

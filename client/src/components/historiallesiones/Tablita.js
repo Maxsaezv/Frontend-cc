@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import MaterialTable from "material-table";
-import Title from '../resumen/Title.js';
-import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Title from '../ficha/Title.js';
 
 
 
