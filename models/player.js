@@ -18,7 +18,7 @@ var schema = mongoose.Schema(
     activo:                           { type: Boolean, default: true},
     
     // FICHA ///
-    ficha: { type: {
+    ficha: {
       clubanterior:                   { type: String},
       historiamedicapersonal: { 
         enfermedadesprevias:          { type: String, trim: true},
@@ -33,7 +33,7 @@ var schema = mongoose.Schema(
           disneafatiga:               { type: String, trim: true},
           antecedentesoplo:           { type: String, trim: true},
           antecedentehipertension:    { type: String, trim: true},
-        }
+        
       },
       historiamedicafamiliar: {
         muertesubita:                 { type: String, trim: true},
