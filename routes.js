@@ -35,6 +35,7 @@ router
 router
   .route("/players/recontratacion/:player_id")
   .patch(playersController.recontratacion)
+  .delete(playersController.eliminar)
 
 // Injury's routes
 var injuriesController = require("./controllers/injury");
