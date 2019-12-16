@@ -1,3 +1,5 @@
-.ConjuntoPerfil {
-  display: flex;
-  }
+.Toolbar {
+    position: fixed;
+    left:0;
+
+}
