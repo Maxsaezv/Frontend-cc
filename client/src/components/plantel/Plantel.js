@@ -11,7 +11,7 @@ class Plantel extends Component {
 
   render() {
     const tabla = this.props
-    return <Tabla AUX = {tabla}/>;
+    return <Tabla />;
   }
 }
 
