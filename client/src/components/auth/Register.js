@@ -42,15 +42,14 @@ return (
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
+              <i className="material-icons left">keyboard_backspace</i> Volver atrás
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Register</b> below
+                <b>Registrar</b> nueva cuenta
               </h4>
               <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+                Ya tienes cuenta? <Link to="/login">Acceder</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -65,7 +64,7 @@ return (
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nombre</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
@@ -93,7 +92,7 @@ return (
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Contraseña</label>
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="input-field col s12">
@@ -107,7 +106,7 @@ return (
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+                <label htmlFor="password2">Confirmar contraseña</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -121,7 +120,7 @@ return (
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
-                  Sign up
+                  Registrar
                 </button>
               </div>
             </form>

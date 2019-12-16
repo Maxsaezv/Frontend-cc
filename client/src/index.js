@@ -19,14 +19,14 @@ import Plantel from "./components/plantel/Plantel";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Notfound from "./components/notfound/notFound";
-import Jugador from "./components/jugador/Jugador";
+//import Jugador from "./components/jugador/Jugador";
 import Informe from "./components/informe/Informe";
 import Dashboard from "./components/dashboard/Dashboard";
 import HistorialLesiones from "./components/historiallesiones/HistorialLesiones";
 import PerfilJugador from "./components/perfil/PerfilJugador";
 import testeo from "./components/test/testeo";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Resumen from "./components/resumen/Dashboard";
+import Resumen from "./components/resumen/Resumen";
 // ReactDOM.render( <App/> , document.getElementById('root'));
 
 // Check for token to keep user logged in
@@ -64,7 +64,7 @@ const routing = (
           <Route exact path="/plantel" component={Plantel} />
           <Route exact path="/test" component={testeo} />
           <Route path="/jugador" component={PerfilJugador} />
-          <Route path="/informe" component={Dashboard} />
+          <Route path="/informe" component={Informe} />
           <Route path="/historial" component={HistorialLesiones} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
