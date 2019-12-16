@@ -1,6 +1,11 @@
-cd client  \n
-npm install \n
-cd .. \n
-npm install \n
-npm run dev \n
+cd client 
+
+npm install 
+
+cd .. 
+
+npm install 
+
+npm run dev 
+
 
