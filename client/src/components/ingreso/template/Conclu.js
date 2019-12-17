@@ -90,7 +90,7 @@ let jugador = {
 
             console.log('Jugador Creado')
             console.log(res)
-            // window.location.href = '/plantel'
+            window.location.href = '/plantel'
             
         })
         .catch(err => {
