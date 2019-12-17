@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import { mainListItems } from '../ficha/listItems';
 import InfoPerfil from './InfoResumen';
 import './Resumen.css';
+import LesionActual from './LesionActual';
 
 
 const drawerWidth = 240;
@@ -49,6 +50,12 @@ export default function Dashboard() {
            <Grid>
                  <Paper className={classes.paper}>
                    <InfoPerfil />
+                 </Paper>
+               </Grid>
+            
+               <Grid>
+                 <Paper className={classes.paper}>
+                   <LesionActual />
                  </Paper>
                </Grid>
  

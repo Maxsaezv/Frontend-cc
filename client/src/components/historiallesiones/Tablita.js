@@ -30,14 +30,14 @@ export default class Tablita extends Component {
 
            ]}
             data={[
-            { date: "12/03/2019", tipo: "Desgarro", zona: "Muslo", lado: "Derecho", gravedad: "Mediana", trec: "3 Semanas" },
+            { date: "01/12/2019", tipo: "Desgarro", zona: "Muslo", lado: "Derecho", gravedad: "Grave", trec: "2 Meses" },
             { date: "19/07/2018", tipo: "Fractura", zona: "Tibia", lado: "Izquierda", gravedad: "Grave", trec: "8 Meses" },
             { date: "22/10/2018", tipo: "Dislocación", zona: "Hombro", lado: "Derecho", gravedad: "Mediana", trec: "1 Semana" },
             { date: "17/03/2016", tipo: "Desgarro", zona: "Muslo", lado: "Derecho", gravedad: "Mediana", trec: "3 Semanas" },
-            { date: "23/04/2013", tipo: "Esguince", zona: "Tobillo", lado: "Derecho", gravedad: "Mediana", trec: "3 Semanas" },
+            { date: "23/04/2013", tipo: "Corte de Ligamentos", zona: "Rodilla", lado: "Derecho", gravedad: "Grave", trec: "5 Meses" },
             { date: "29/08/2012", tipo: "Contractura", zona: "Muslo", lado: "Derecho", gravedad: "Baja", trec: "3 Semanas" },
             { date: "31/11/2012", tipo: "Fractura", zona: "Craneo", lado: "N.A.", gravedad: "Grave", trec: "5 Meses" },
-            { date: "03/09/2011", tipo: "Corte de Ligamentos", zona: "Rodilla", lado: "Derecho", gravedad: "Grave", trec: "6 Meses" },
+            { date: "03/09/2011", tipo: "Contusión", zona: "Codo", lado: "Izquierdo", gravedad: "Mediana", trec: "1 Semana" },
             { date: "09/07/2011", tipo: "Contractura", zona: "Muslo", lado: "Izquierda", gravedad: "Baja", trec: "3 Semanas" },
             { date: "11/02/2010", tipo: "Esguince", zona: "Muñeca", lado: "Izquierda", gravedad: "Baja", trec: "3 Semanas" },
             
