@@ -5,14 +5,15 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 // Schema
 var schema = Schema(
   {
-    name:         { type: String, trim: true, required: [true, 'Título es requerido']},
+    injuryId: {type: String, required: false},
+    nombre:         { type: String, trim: true, required: [true, 'Título es requerido']},
     fecha:        { type: Date, default: Date.now()},
     body:         { type: String, trim: true },
-    image:        { type: Object}, // IMAGEN
+    // image:        { type: Object} // IMAGEN
   },
   {
     timestamps: true
   }
 );
 
-var Observation = module.exports = mongoose.model("observation", schema);
+var Observation = module.exports = mongoose.model('observation', schema);

@@ -18,8 +18,11 @@ const UserSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-
-  _locks:[{type: Schema.Types.ObjectId, ref: 'user'}]
-});
+  _locks:[{type: Schema.Types.ObjectId, ref: 'user'}],
+},
+{
+  timestamps: true
+}
+);
 
 module.exports = User = mongoose.model("users", UserSchema);

@@ -129,22 +129,6 @@ exports.update = (req, res) => {
 };
 
 exports.desvinculacion = async(req, res) => {
-  // Player.deleteOne(
-  //   {
-  //     _id: req.params.contact_id
-  //   },
-  //   function(err, player) {
-  //     if (err) {
-  //       res.send(err);
-  //     } else {
-  //       res.json({
-  //         status: "success",
-  //         message: "Jugador eliminado"
-  //       });
-  //     }
-  //   }
-  // );
-
   const id = req.params.player_id;
   const jugador = await Player.findByIdAndUpdate(id, {$set: {activo: false}})
                                             .catch(err => res.json(err));
@@ -156,4 +140,22 @@ exports.recontratacion = async(req, res) => {
   const jugador = await Player.findByIdAndUpdate(id, {$set: {activa: true}})
                                             .catch(err => res.json(err));
   res.send(jugador)
+};
+
+exports.eliminar = async(req, res) => {
+  Player.deleteOne(
+    {
+      _id: req.params.player_id
+    },
+    function(err, player) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({
+          status: "success",
+          message: "Jugador eliminado"
+        });
+      }
+    }
+  )
 };

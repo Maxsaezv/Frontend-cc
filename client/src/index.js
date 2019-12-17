@@ -11,6 +11,11 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+// React Notification
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+
+
 
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -68,21 +73,20 @@ const routing = (
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-
-          <Route exact path="/plantel" component={Plantel} />
-          <Route path="/plantel/ingreso" component={AddPlayer} />
-          <Route path="/plantel/:jugador" component={Jugador} />
-          <Route path="/plantel/informe" component={Informe} />
-          <Route path="/resumen" component={Resumen} />
-          <Route path="/informe" component={Informe} />
-          <Route path="/historial" component={HistorialLesiones} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/ficha" component={Ficha} />
+              <PrivateRoute exact path="/plantel" component={Plantel} />
+              <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
+              <PrivateRoute path="/plantel/:jugador" component={Jugador} />
+              <PrivateRoute path="/plantel/informe" component={Informe} />
+              <PrivateRoute path="/resumen" component={Resumen} />
+              <PrivateRoute path="/informe" component={Informe} />
+              <PrivateRoute path="/historial" component={HistorialLesiones} />
           </Switch>
           <Route component={Notfound} />
-          
         </Switch>
+        <NotificationContainer />
       </div>
 
       <div className="footer">

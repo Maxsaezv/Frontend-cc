@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Grid, Typography, TextField, Button } from "@material-ui/core";
 import api from '../../../api/api';
+// React Notification
+import { NotificationManager } from 'react-notifications';
 
 
 
@@ -20,61 +22,79 @@ export class Conclu extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
 
-    let jugador = {
-        jugador: {
-          nombre: this.props.values.nombre
-          // nacimiento: this.props.values.nacimiento,
-          // pais: this.props.values.pais,
-          // posicion: this.props.values.posicion,
-          // sangre: this.props.values.sangre,
-          // isapre: this.props.values.isapre,
-          // status: this.props.values.status,
-          // pie: this.props.values.pie,
-          // estatura: this.props.values.estatura,
-          // peso: this.props.values.peso,
-          // dorsal: this.props.values.dorsal,
-          // clubanterior: this.props.values.clubanterior,
-          // enfermedadesprevias: this.props.values.enfermedadesprevias,
-          // cirugias: this.props.values.cirugias,
-          // hospitalizaciones: this.props.values.hospitalizaciones,
-          // alergias: this.props.values.alergias,
-          // lesionesgravesprevias: this.props.values.lesionesgravesprevias,
-          // medicamentossuplementos: this.props.values.medicamentossuplementos,
-          // dolordisconforttoracico: this.props.values.dolordisconforttoracico,
-          // sincopelipotimia: this.props.values.sincopelipotimia,
-          // disneafatiga: this.props.values.disneafatiga,
-          // antecedentesoplo: this.props.values.antecedentesoplo,
-          // antecedentehipertension: this.props.values.antecedentehipertension,
-          // muertesubita: this.props.values.muertesubita,
-          // enfermedadcardiaca: this.props.values.enfermedadcardiaca,
-          // enfermedadcardiaca_familiar: this.props.values.enfermedadcardiaca_familiar,
-          // ritmocardiaco: this.props.values.ritmocardiaco,
-          // frecuenciacardiaca: this.props.values.frecuenciacardiaca,
-          // soplos: this.props.values.soplos,
-          // pulsosperifericos: this.props.values.pulsosperifericos,
-          // estigmas: this.props.values.estigmas,
-          // presionarterial: this.props.values.presionarterial,
-          // faringe_amigdalas: this.props.values.faringe_amigdalas,
-          // pulmonar: this.props.values.pulmonar,
-          // abdomen: this.props.values.abdomen,
-          // hernias: this.props.values.hernias,
-          // musculoesqueletico: this.props.values.musculoesqueletico,
-          // electrocardiogramareposo: this.props.values.electrocardiogramareposo,
-          // otrosexamenes: this.props.values.otrosexamenes,
-          // conclusion: this.props.values.conclusion
-        }
-      };
+let jugador = {
+  player:{
+    nombre: this.props.values.nombre,
+    nacimiento: this.props.values.nacimiento,
+    posicion: this.props.values.posicion,
+    pais: this.props.values.pais,
+    status: true,
+    peso:this.props.values.peso,
+    estatura:this.props.values.estatura,
+    pie: this.props.values.pie,
+    dorsal: this.props.values.dorsal,
+    sangre : this.props.values.sangre,
+    ficha:{
+      clubanterior: this.props.values.clubanterior,
+      historiamedicapersonal:{
+        enfermedadesprevias : this.props.values.enfermedadesprevias,
+        cirugias: this.props.values.cirugias,
+        hospitalizaciones:this.props.values.hospitalizaciones,
+        alergias:this.props.values.alergias,
+        lesionesgravesprevias:this.props.values.lesionesgravesprevias,
+        medicamentossuplementos:this.props.values.medicamentossuplementos,
+        dolordisconforttoracico:this.props.values.dolordisconforttoracico,
+        sincopelipotimia:this.props.values.sincopelipotimia,           
+        disneafatiga:this.props.values.disneafatiga,               
+        antecedentesoplo:this.props.values.antecedentesoplo ,        
+        antecedentehipertension:this.props.values.antecedentehipertension
+      },
+      historiamedicafamiliar: {
+            muertesubita:this.props.values.muertesubita,                
+            enfermedadcardiaca:this.props.values.enfermedadcardiaca,         
+            enfermedadcardiaca_familiar:this.props.values.enfermedadcardiaca_familiar
+        },
+        examenfisico: {
+            pesoIngreso: this.props.values.pesoIngreso,                 
+            estaturaIngreso: this.props.values.estaturaIngreso,             
+            ritmocardiaco: this.props.values.ritmocardiaco  ,             
+            frecuenciacardiaca: this.props.values.frecuenciacardiaca ,        
+            soplos:this.props.values.soplos ,                      
+            pulsosperifericos:this.props.values.pulsosperifericos ,           
+            estigmas: this.props.values.estigmas ,                   
+            presionarterial:this.props.values.presionarterial,              
+            faringe_amigdalas:this.props.values.faringe_amigdalas ,           
+            pulmonar:this.props.values.pulmonar ,                    
+            abdomen:this.props.values.abdomen ,                    
+            hernias:this.props.values.hernias ,                    
+            musculoesqueletico:this.props.values.musculoesqueletico           
+        },
+        electrocardiogramareposo:this.props.values.electrocardiogramareposo ,
+        otrosexamenes:this.props.values.otrosexamenes,
+        conclusion:this.props.values.conclusion,
+        medico:{
+          nombre:"diex",
+          rut:"1111"
+    }
+        
+    }
+  }
+}
+
+
   console.log('Creando jugador from API!')
   console.log(jugador)
     api
-        .createPlayer(jugador)
+        .crearJugador(jugador)
         .then(res => {
-
+          NotificationManager.success('Jugador creado', 'Éxito!', 2000);
             console.log('Jugador Creado')
             console.log(res)
+            window.location.href = '/plantel'
             
         })
         .catch(err => {
+          NotificationManager.error('Error al crear jugador', 'Error!');
             console.log('Error al Crear Jugador ')
             console.log(err)
             

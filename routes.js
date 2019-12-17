@@ -8,14 +8,8 @@ router.get("/", function(req, res) {
 });
 
 // // // Auth's routes
-// var authController = require("./controllers/auth");
 
-// router
-//   .route("/register")
-//   .post(authController.register)
-// router
-//   .route("/login")
-//   .post(authController.login)
+// ./ROUTES/API
 
 // Player's routes
 var playersController = require("./controllers/player");
@@ -35,6 +29,7 @@ router
 router
   .route("/players/recontratacion/:player_id")
   .patch(playersController.recontratacion)
+  .delete(playersController.eliminar)
 
 // Injury's routes
 var injuriesController = require("./controllers/injury");
@@ -47,6 +42,9 @@ router
   .route("/players/:player_id/historial")
   .get(injuriesController.inactivas)
 router
+  .route("/players/:player_id/historial/:injury_id")
+  .delete(injuriesController.eliminar)
+router
   .route("/players/:player_id/injuries/:injury_id")
   .get(injuriesController.view)
   .delete(injuriesController.dardealta)
@@ -57,7 +55,7 @@ router
 var observationsController = require('./controllers/observation');
 
 router
-  .route("/players/players_id/injuries/:injury_id/observations")
+  .route("/players/:players_id/injuries/:injury_id/observations")
   .get(observationsController.all)
   .post(observationsController.create)
 router
