@@ -2,7 +2,7 @@
 Injury = require("../models/injury");
 
 exports.activas = async(req, res) => {
-    const injury = await Injury.aggregate([{ $match: { activa: true}}])
+    const injury = await Injury.aggregate([{ $match: { activa: true, playerId: req.params.player_id}}])
     .catch(err => res.json(err));
     res.send(injury)
 };
@@ -16,7 +16,6 @@ exports.inactivas = async(req, res) => {
         playerId: req.params.player_id
         }
       }
-  
     ]
   )
   .catch(err => res.json(err));
