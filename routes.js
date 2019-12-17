@@ -55,7 +55,7 @@ router
 var observationsController = require('./controllers/observation');
 
 router
-  .route("/players/players_id/injuries/:injury_id/observations")
+  .route("/players/:players_id/injuries/:injury_id/observations")
   .get(observationsController.all)
   .post(observationsController.create)
 router

@@ -25,8 +25,13 @@ const apiEndpoints = {
     editarLesion: { method: patch, path: '/players/:player_id/injuries/:injury_id' },
     altaLesion: { method: destroy, path: '/players/:player_id/injuries/:injury_id' },
     getLesion: { method: get, path: '/players/:player_id/injuries/:injury_id' },
-    elimarLesion: {method: destroy, path: '/players/:player_id/historial/:injury_id'}
-
+    elimarLesion: {method: destroy, path: '/players/:player_id/historial/:injury_id'},
+    //Observaciones
+    getObservaciones: {method: get, path: '/players/players_id/injuries/:injury_id/observations'},
+    crearObservaciones: {method: post, path: '/players/players_id/injuries/:injury_id/observations'},
+    detalleObservacion: {method: get, path: '/players/:player_id/injuries/:injury_id/observations/:observation_id'},
+    eliminarObservacion: {method: destroy, path: '/players/:player_id/injuries/:injury_id/observations/:observation_id'},
+    editarObservacion: {method: patch, path: '/players/:player_id/injuries/:injury_id/observations/:observation_id'}
 };
 
 const config = {

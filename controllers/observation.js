@@ -1,27 +1,21 @@
 // Import model
 Observation = require("../models/observation");
 
-exports.all = (req, res) => {
-  Injury.find({ injuryId: req.params.injury_id })
-    .then(observations => {
-      res.status(200).json({
-        status: "ok",
-        injuries
-      });
-    })
-    .catch(err => {
-      if (err.name === "CastError") {
-        res.status(404).json({
-          status: "error",
-          type: "Not found",
-          message: "Lesión no existe"
-        });
-      }
-    });
-};
+exports.all = async(req, res) => {
+  const observation = await Observation.aggregate([{ $match: { injuryId: req.params.injury_id}}])
+                        .catch(err => res.json(err));
+  res.send(observation)
+  };
 
 exports.create = (req, res) => {
-  var observation = new Injury(req.body.observation);
+  var observation = new Observation();
+  let formData = req.body.observation;
+
+  observation.nombre = formData.nombre;
+  observation.fecha = formData.fecha;
+  observation.body = formData.body ? formData.body : null;
+  observation.injuryId = req.params.injury_id;
+
   observation
     .save()
     .then(observation => {
@@ -72,10 +66,9 @@ exports.update = (req, res) => {
     }
 
     let formData = req.body.observation;
-
-    observation.observation = formData.observation ? formData.observation : observation.observation
-    observation.date = formData.date ? formData.date : observation.date
-
+    observation.nombre = formData.nombre ? formData.nombre : observation.nombre;
+    observation.body = formData.body ? formData.body : observation.body;
+    observation.fecha = formData.fecha ? formData.fecha : observation.fecha;
 
 
 
