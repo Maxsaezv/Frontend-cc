@@ -45,6 +45,7 @@ export default function Resumen() {
         <List>{mainListItems}</List>
       </Grid>
       <Grid item xs={10} align='center'>
+        <div className={classes.appBarSpacer} />
       
             {/* HMPersonal */}
             <Grid>

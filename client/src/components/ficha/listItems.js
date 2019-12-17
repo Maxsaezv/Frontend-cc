@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export const mainListItems = (
   
-  <div className= 'NavBar' align="center">
+  <div className= 'NavBar' align="center" position="fixed">
          <img
                  src= "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/10848016_1696057350621165_3676383896235917389_n.jpg?_nc_cat=106&_nc_ohc=utfjziSjXccAQmUdNhRQs9UTXZw33x6NFjo0tAph6D4WZb4KGUN1PIwJw&_nc_ht=scontent-sjc3-1.xx&oh=ca6a9594c111ee8b29f88c7007341bca&oe=5E6F3664"
                  alt="avatar"

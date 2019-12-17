@@ -5,7 +5,6 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import { mainListItems } from '../resumen/listItems';
 import InfoPerfil from './InfoPerfil';
