@@ -71,8 +71,8 @@ const routing = (
 
           <Route exact path="/plantel" component={Plantel} />
           <Route path="/plantel/ingreso" component={AddPlayer} />
-          <Route path="/plantel/:jugador" component={Jugador} />
-          <Route path="/plantel/informe" component={Informe} />
+          <Route path="/plantel/:jugador" component={Resumen} />
+          <Route path="/plantel/informe" component={Informe} />*
           <Route path="/resumen" component={Resumen} />
           <Route path="/informe" component={Informe} />
           <Route path="/historial" component={HistorialLesiones} />
