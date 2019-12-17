@@ -27,6 +27,12 @@ let jugador = {
     nacimiento: this.props.values.nacimiento,
     posicion: this.props.values.posicion,
     pais: this.props.values.pais,
+    status: true,
+    peso:this.props.values.peso,
+    estatura:this.props.values.estatura,
+    pie: this.props.values.pie,
+    dorsal: this.props.values.dorsal,
+    sangre : this.props.values.sangre,
     ficha:{
       clubanterior: this.props.values.clubanterior,
       historiamedicapersonal:{
@@ -84,6 +90,7 @@ let jugador = {
 
             console.log('Jugador Creado')
             console.log(res)
+            // window.location.href = '/plantel'
             
         })
         .catch(err => {
