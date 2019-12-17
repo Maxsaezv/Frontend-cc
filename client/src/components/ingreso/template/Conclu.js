@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Grid, Typography, TextField, Button } from "@material-ui/core";
 import api from '../../../api/api';
+// React Notification
+import { NotificationManager } from 'react-notifications';
 
 
 
@@ -85,12 +87,14 @@ let jugador = {
     api
         .crearJugador(jugador)
         .then(res => {
+          NotificationManager.success('Jugador creado', 'Éxito!', 2000);
             console.log('Jugador Creado')
             console.log(res)
             window.location.href = '/plantel'
             
         })
         .catch(err => {
+          NotificationManager.error('Error al crear jugador', 'Error!');
             console.log('Error al Crear Jugador ')
             console.log(err)
             
