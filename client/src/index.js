@@ -73,6 +73,17 @@ const routing = (
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+<<<<<<< HEAD
+=======
+
+          <Route exact path="/plantel" component={Plantel} />
+          <Route path="/plantel/ingreso" component={AddPlayer} />
+          <Route path="/plantel/:jugador" component={Resumen} />
+          <Route path="/plantel/informe" component={Informe} />*
+          <Route path="/resumen" component={Resumen} />
+          <Route path="/informe" component={Informe} />
+          <Route path="/historial" component={HistorialLesiones} />
+>>>>>>> origin/MX
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/ficha" component={Ficha} />
