@@ -6,11 +6,17 @@ import {
   SET_CURRENT_USER,
   USER_LOADING
 } from "./types";
+// React Notification
+import { NotificationManager } from 'react-notifications';
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
     .post("/api/users/register", userData)
-    .then(res => history.push("/login")) // re-direct to login on successful register
+    .then(res => {
+      history.push("/login");// re-direct to login on successful register
+      NotificationManager.success('Usuario registrado', 'Éxito!', 2000);
+    }) 
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -33,6 +39,7 @@ export const loginUser = userData => dispatch => {
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
+      NotificationManager.success('Usuario conectado', 'Éxito!', 2000);
     })
     .catch(err =>
       dispatch({
