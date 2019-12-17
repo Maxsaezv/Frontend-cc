@@ -80,7 +80,8 @@ export default function Orders(props) {
               <b>NOMBRE:</b>{" "}
             </TableCell>
             
-          <TableCell align="center">{datos.nombre}</TableCell>
+          <TableCell align="center">{datos.nombre}
+          </TableCell>
             
           </TableRow>
 
