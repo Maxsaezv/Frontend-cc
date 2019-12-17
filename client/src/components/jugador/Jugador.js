@@ -8,7 +8,7 @@ class Jugador extends Component {
   }
 
   render() {
-    console.log(this.props.match.params.jugador);
+    console.log(this.props);
     return (
       <div>
         Jugador
