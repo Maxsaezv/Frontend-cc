@@ -43,12 +43,12 @@ export default function Dashboard() {
   let id = window.location.pathname.substring(9);
 
   // //llamado Api
-  // useEffect(() => {
-  //   let datos = api.getJugador({ player_id: id }).then(res => {
-  //     // console.log("res", res.body.player);
-  //     setState(res.body.player);
-  //   });
-  // }, []);
+  useEffect(() => {
+    let datos = api.getJugador({ player_id: id }).then(res => {
+      // console.log("res", res.body.player);
+      setState(res.body.player);
+    });
+  }, []);
 
   // console.log("estado", state);
 

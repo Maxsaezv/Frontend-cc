@@ -60,7 +60,7 @@ exports.create = (req, res) => {
   player.ficha.otrosexamenes = formData.ficha.otrosexamenes ? formData.ficha.otrosexamenes : null;
   player.ficha.conclusion = formData.ficha.conclusion ? formData.ficha.conclusion : null;
   player.ficha.medico.nombre = formData.ficha.medico.nombre ? formData.ficha.medico.nombre : null;
-  player.ficha.medico.rut = formData.isapre ? formData.isapre : null;
+  player.ficha.medico.rut = formData.ficha.medico.rut ? formData.ficha.medico.rut : null;
 
   // Save player
   player.save(function(err) {
