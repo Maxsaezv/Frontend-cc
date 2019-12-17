@@ -18,17 +18,10 @@ class Tabla extends Component {
   getPlayers = () => {
     console.log("Hello, get all players from API");
     api
-<<<<<<< HEAD
-    .getActivos()
-    .then(res => {
-      let data = res.body;
-      this.setState({
-=======
       .getAll()
       .then(res => {
         let data = res.body;
         this.setState({
->>>>>>> origin/MX
           players: data
         });
         console.log("Api");
