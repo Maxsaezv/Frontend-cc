@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+
 class Register extends Component {
   constructor() {
     super();
@@ -15,6 +16,7 @@ class Register extends Component {
       errors: {}
     };
   }
+
 componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -33,8 +35,9 @@ const newUser = {
       password: this.state.password,
       password2: this.state.password2
     };
-this.props.registerUser(newUser, this.props.history); 
+this.props.registerUser(newUser, this.props.history);
   };
+
 render() {
     const { errors } = this.state;
 return (
@@ -110,22 +113,14 @@ return (
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
+                <button style={ {width: "150px", borderRadius: "3px", letterSpacing: "1.5px", marginTop: "1rem"} } type="submit" className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
                   Registrar
                 </button>
               </div>
             </form>
           </div>
         </div>
+        
       </div>
     );
   }

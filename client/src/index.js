@@ -11,6 +11,11 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+// React Notification
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+
+
 
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -68,7 +73,6 @@ const routing = (
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/ficha" component={Ficha} />
@@ -81,8 +85,8 @@ const routing = (
               <PrivateRoute path="/historial" component={HistorialLesiones} />
           </Switch>
           <Route component={Notfound} />
-          
         </Switch>
+        <NotificationContainer />
       </div>
 
       <div className="footer">

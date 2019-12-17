@@ -20,7 +20,6 @@ export class Conclu extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
 
-
 let jugador = {
   player:{
     nombre: this.props.values.nombre,
@@ -81,13 +80,11 @@ let jugador = {
 }
 
 
-
   console.log('Creando jugador from API!')
   console.log(jugador)
     api
-        .createPlayer(jugador)
+        .crearJugador(jugador)
         .then(res => {
-
             console.log('Jugador Creado')
             console.log(res)
             window.location.href = '/plantel'

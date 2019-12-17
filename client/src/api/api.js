@@ -4,20 +4,15 @@ import { buildApi, get, post, patch, destroy } from 'redux-bees';
 // require('custom-env').env('development')
 
 const apiEndpoints = {
-    getView: { method: get, path: '/players/:player_id' },
-    getAll: { method: get, path: '/players' },
-    updatePlayer: { method: patch, path: '/players/:player_id' },
-    destroyPlayer: { method: destroy, path: '/players' },
-    createPlayer: { method: post, path: '/players' },
     ////Jugador
-    crearJugador: {method: post, path: '/players'},
-    getActivos: {method: get, path: '/players'},
+    crearJugador: {method: post, path: '/players'},//ex-createPlayers
+    getActivos: {method: get, path: '/players'}, //ex-getPlayers
     getInactivos: {method: get, path: '/players/inactivos'},
-    getJugador: {method: get, path: '/players/:player_id'},
+    getJugador: {method: get, path: '/players/:player_id'},//ex-getView
     desvincularJugador: {method: destroy, path: '/players/:player_id'},
-    editarJugador: {method: patch, path: '/players/:player_id'},
+    editarJugador: {method: patch, path: '/players/:player_id'},//ex-updatePlayers
     recontratarJugador: {method: patch, path:'/players/recontratacion/:player_id'},
-    eliminarJugador: {method: destroy, path:'/players/recontratacion/:player_id'},
+    eliminarJugador: {method: destroy, path:'/players/recontratacion/:player_id'},//ex-destroyPlayers
     ////Lesiones
     crearLesion: { method: post, path: '/players/:player_id/injuries' },
     getLesionesActivas: { method: get, path: '/players/:player_id/injuries' },
