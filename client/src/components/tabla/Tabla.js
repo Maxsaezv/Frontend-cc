@@ -6,12 +6,6 @@ import CheckIcon from "@material-ui/icons/Check";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import api from "../../api/api";
 
-
-
-
-
-
-
 class Tabla extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +18,7 @@ class Tabla extends Component {
   getPlayers=()=> {
     console.log("Hello, get all players from API");
     api
-    .getAll()
+    .getActivos()
     .then(res => {
       let data = res.body;
       this.setState({

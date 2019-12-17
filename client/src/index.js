@@ -69,16 +69,16 @@ const routing = (
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
 
-          <Route exact path="/plantel" component={Plantel} />
-          <Route path="/plantel/ingreso" component={AddPlayer} />
-          <Route path="/plantel/:jugador" component={Jugador} />
-          <Route path="/plantel/informe" component={Informe} />
-          <Route path="/resumen" component={Resumen} />
-          <Route path="/informe" component={Informe} />
-          <Route path="/historial" component={HistorialLesiones} />
           <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/ficha" component={Ficha} />
+              <PrivateRoute exact path="/plantel" component={Plantel} />
+              <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
+              <PrivateRoute path="/plantel/:jugador" component={Jugador} />
+              <PrivateRoute path="/plantel/informe" component={Informe} />
+              <PrivateRoute path="/resumen" component={Resumen} />
+              <PrivateRoute path="/informe" component={Informe} />
+              <PrivateRoute path="/historial" component={HistorialLesiones} />
           </Switch>
           <Route component={Notfound} />
           
