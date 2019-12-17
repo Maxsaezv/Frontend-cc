@@ -15,13 +15,7 @@ exports.inactivo = async(req, res) => {
 
 exports.create = (req, res) => {
   var player = new Player();
-  // player.ficha = Object;
-  // player.ficha.historiamedicapersonal = Object;
-  // player.ficha.historiamedicafamiliar = Object;
-  // player.ficha.examenfisico = Object;
-  
-  console.log(player);
-  
+ 
   let formData = req.body.player;
 
   player.nombre = formData.nombre;
