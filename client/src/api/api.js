@@ -9,13 +9,23 @@ const apiEndpoints = {
     updatePlayer: { method: patch, path: '/players/:player_id' },
     destroyPlayer: { method: destroy, path: '/players' },
     createPlayer: { method: post, path: '/players' },
-
-    createInjuries: { method: post, path: '/players/:player_id/injuries' },
-    getInjuries: { method: get, path: '/players/:player_id/injuries' },
-    updateInjury: { method: patch, path: '/players/:player_id/injuries/:injury_id' },
-    destroyInjury: { method: destroy, path: '/players/:player_id/injuries/:injury_id' },
-    getInjury: { method: get, path: '/players/:player_id/injuries/:injury_id' }
-
+    ////Jugador
+    crearJugador: {method: post, path: '/players'},
+    getActivos: {method: get, path: '/players'},
+    getInactivos: {method: get, path: '/players/inactivos'},
+    getJugador: {method: get, path: '/players/:player_id'},
+    desvincularJugador: {method: destroy, path: '/players/:player_id'},
+    editarJugador: {method: patch, path: '/players/:player_id'},
+    recontratarJugador: {method: patch, path:'/players/recontratacion/:player_id'},
+    eliminarJugador: {method: destroy, path:'/players/recontratacion/:player_id'},
+    ////Lesiones
+    crearLesion: { method: post, path: '/players/:player_id/injuries' },
+    getLesionesActivas: { method: get, path: '/players/:player_id/injuries' },
+    getLesionesInactivas: { method: get, path: '/players/:player_id/historial' },
+    editarLesion: { method: patch, path: '/players/:player_id/injuries/:injury_id' },
+    altaLesion: { method: destroy, path: '/players/:player_id/injuries/:injury_id' },
+    getLesion: { method: get, path: '/players/:player_id/injuries/:injury_id' },
+    elimarLesion: {method: destroy, path: '/players/:player_id/historial/:injury_id'}
 
 };
 

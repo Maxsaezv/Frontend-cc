@@ -8,8 +8,18 @@ exports.activas = async(req, res) => {
 };
 
 exports.inactivas = async(req, res) => {
-  const injury = await Injury.aggregate([{ $match: { activa: false}}])
-                        .catch(err => res.json(err));
+  const injury = await Injury.aggregate(
+    [
+      {
+        $match: {
+        activa: false,
+        playerId: req.params.player_id
+        }
+      }
+  
+    ]
+  )
+  .catch(err => res.json(err));
   res.send(injury)
 };
 
@@ -122,4 +132,22 @@ exports.dardealta = async(req, res) => {
   const lesion = await Injury.findByIdAndUpdate(id, {$set: {activa: false}})
                                             .catch(err => res.json(err));
   res.send(lesion)
+};
+
+exports.eliminar = async(req, res) => {
+  Injury.deleteOne(
+    {
+      _id: req.params.injury_id
+    },
+    function(err, injury) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({
+          status: "success",
+          message: "Lesion eliminada"
+        });
+      }
+    }
+  )
 };
