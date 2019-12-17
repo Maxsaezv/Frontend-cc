@@ -79,10 +79,9 @@ export default function Orders(props) {
             <TableCell>
               <b>NOMBRE:</b>{" "}
             </TableCell>
-           {rows.map(row => (
-             <TableCell align="center">{row.Nombre}
-             </TableCell>
-           ))} 
+            {rows.map(row => (
+              <TableCell align="center">{row.Nombre}</TableCell>
+            ))}
             
           </TableRow>
 
@@ -91,9 +90,8 @@ export default function Orders(props) {
               <b>POSICIÓN:</b>
             </TableCell>
             {rows.map(row => (
-             <TableCell align="center">{row.Posicion}
-             </TableCell>
-           ))} 
+              <TableCell align="center">{row.Posicion}</TableCell>
+            ))}
           </TableRow>
 
           <TableRow>
