@@ -45,6 +45,7 @@ export class Datos extends Component {
                   label="Fecha de Nacimiento"
                   onChange = {handleChange('nacimiento')}
                   defaultValue ={values.nacimiento}
+                  type = "date"
                   fullWidth
                 />
               </Grid>
@@ -105,6 +106,7 @@ export class Datos extends Component {
                   label="Dorsal"
                   onChange = {handleChange('dorsal')}
                   defaultValue ={values.dorsal}
+                  type = "number"
                   fullWidth
                 />
               </Grid>

@@ -29,6 +29,7 @@ export class Fisico extends Component {
                 label="Peso"
                 onChange={handleChange("peso")}
                 defaultValue={values.peso}
+                type = "number"
                 fullWidth
               />
             </Grid>
@@ -40,6 +41,7 @@ export class Fisico extends Component {
                 label="Estatura"
                 onChange={handleChange("estatura")}
                 defaultValue={values.estatura}
+                type = "number"
                 fullWidth
               />
             </Grid>
