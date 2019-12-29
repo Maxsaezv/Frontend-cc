@@ -7,6 +7,9 @@ import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from '@material-ui/core';
 import GroupIcon from '@material-ui/icons/Group';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +32,7 @@ export default function ButtonAppBar() {
         <Toolbar>
         <Button color="inherit">
           <Link href="javascript:window.history.back()" color='inherit'>
-          <i className="material-icons left">keyboard_backspace</i>
+          <ArrowBackIcon />
           </Link>
           </Button>
           <Typography variant="h6" className={classes.title}>
