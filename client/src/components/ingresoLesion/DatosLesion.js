@@ -7,10 +7,55 @@ import {
   Button
 } from "@material-ui/core";
 
+import api from '../../api/api'
+
 export class Datos extends Component {
   next = e => {
     e.preventDefault();
     this.props.nextStep();
+  };
+
+  handleSubmit = evt => {
+
+    let url = window.location.pathname.substring(0, 33);
+    const idplayer = window.location.pathname.substring(9, 33)
+
+    let { values } = this.props
+    console.log('url', url, 'idplayer', idplayer, values)
+
+    let lesion = {
+      injury: {
+        nombre: values.nombre,
+        playerId: idplayer,
+        fecha: values.fecha,
+        reintegroestimado: values.reingresoestimado,
+        lateralidad: values.lateralidad,
+        gravedad: values.gravedad,
+        tipo: values.tipo,
+        mecanismo: values.mecanismo,
+        entorno: values.entorno,
+        dinamica: values.dinamica,
+        actividad: values.actividad,
+        superficie: values.superficie,
+        origen: values.origen,
+        clasificacion: values.clasificacion,
+        zona: values.zona
+      }
+    }
+
+    console.log("Creando Lesion from API!");
+    console.log(lesion);
+    api
+      .crearLesion({ player_id: idplayer }, lesion)
+      .then(res => {
+        console.log("Lesion Creada");
+        window.location.href = url + '/resumen';
+      })
+      .catch(err => {
+        console.log("Error al Crear Jugador ");
+        alert(err);
+        console.log(err);
+      });
   };
 
   render() {
@@ -213,8 +258,8 @@ export class Datos extends Component {
 
 
               <Grid item xs={12} align='Right'>
-                <Button style={styles.button} onClick={this.next} align="right" >
-                  Next
+                <Button style={styles.button} onClick={this.handleSubmit} align="right" >
+                  Enviar
                 </Button>
               </Grid>
 

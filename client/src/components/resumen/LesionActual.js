@@ -54,7 +54,7 @@ export default class LesionActual extends Component {
             },
             {
               icon: "add",
-              tooltip: "Add User",
+              tooltip: "Agregar Lesion",
               isFreeAction: true,
               onClick: e => (window.location.href = url + "/nuevalesion")
             },

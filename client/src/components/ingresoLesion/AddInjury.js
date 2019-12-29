@@ -7,7 +7,7 @@ export class AddInjury extends Component {
   state = {
     step: 1,
     nombre: "",
-    fecha:"",
+    fecha: "",
     tipo: "",
     gravedad: "",
     lateralidad: "",
@@ -21,7 +21,7 @@ export class AddInjury extends Component {
     clasificacion: "",
     reingresoestimado: "",
     partidosperdidos: "",
-    
+
   };
 
   // Proceed to next step
@@ -42,46 +42,46 @@ export class AddInjury extends Component {
 
   // Handle fields change
   handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
+    this.setState({ [input]: e.target.value }, () => { console.log(this.state) });
   };
 
   render() {
     const { step } = this.state;
 
     const {
-        nombre,
-        fecha,
-        tipo,
-        gravedad,
-        lateralidad,
-        zona,
-        origen,
-        entorno,
-        dinamica,
-        actividad,
-        mecanismo,
-        superficie,
-        clasificacion,
-        reingresoestimado,
-        partidosperdidos
+      nombre,
+      fecha,
+      tipo,
+      gravedad,
+      lateralidad,
+      zona,
+      origen,
+      entorno,
+      dinamica,
+      actividad,
+      mecanismo,
+      superficie,
+      clasificacion,
+      reingresoestimado,
+      partidosperdidos
     } = this.state;
 
     const values = {
-        nombre,
-        fecha,
-        tipo,
-        gravedad,
-        lateralidad,
-        zona,
-        origen,
-        entorno,
-        dinamica,
-        actividad,
-        mecanismo,
-        superficie,
-        clasificacion,
-        reingresoestimado,
-        partidosperdidos
+      nombre,
+      fecha,
+      tipo,
+      gravedad,
+      lateralidad,
+      zona,
+      origen,
+      entorno,
+      dinamica,
+      actividad,
+      mecanismo,
+      superficie,
+      clasificacion,
+      reingresoestimado,
+      partidosperdidos
     };
 
     switch (step) {
@@ -97,7 +97,7 @@ export class AddInjury extends Component {
             </Grid>
           </Grid>
         );
-      
+
       case 2:
         return <Confirmacion values={values} />;
       default:
