@@ -5,6 +5,7 @@ import Familiar from "./template/Familiar";
 import Fisico from "./template/Fisico";
 import Conclu from "./template/Conclu";
 import Confirmacion from "./template/Confirmacion";
+import { Grid } from "@material-ui/core";
 
 export class AddPlayer extends Component {
   state = {
@@ -69,7 +70,7 @@ export class AddPlayer extends Component {
 
   // Handle fields change
   handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
+    this.setState({ [input]: e.target.value }, () => console.log(this.state));
   };
 
   render() {
@@ -164,47 +165,67 @@ export class AddPlayer extends Component {
     switch (step) {
       case 1:
         return (
-          <Datos
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item style={{ maxWidth: "80%" }}>
+              <Datos
+                nextStep={this.nextStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            </Grid>
+          </Grid>
         );
       case 2:
         return (
-          <Personal
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item style={{ maxWidth: "80%" }}>
+              <Personal
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            </Grid>
+          </Grid>
         );
       case 3:
         return (
-          <Familiar
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item style={{ maxWidth: "80%" }}>
+              <Familiar
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            </Grid>
+          </Grid>
         );
       case 4:
         return (
-          <Fisico
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item style={{ maxWidth: "70%" }}>
+              <Fisico
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            </Grid>
+          </Grid>
         );
       case 5:
         return (
-          <Conclu
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item style={{ maxWidth: "80%" }}>
+              <Conclu
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+              />
+            </Grid>
+          </Grid>
         );
       case 6:
         return <Confirmacion values={values} />;
@@ -216,8 +237,7 @@ export class AddPlayer extends Component {
 
 export default AddPlayer;
 
-
-  /* <main className={classes.layout}>
+/* <main className={classes.layout}>
 <Paper className={classes.paper}>
   <Typography component="h1" variant="h4" align="center">
     Ingreso de Jugadores

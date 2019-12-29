@@ -17,89 +17,86 @@ export class Conclu extends Component {
     this.props.prevStep();
   };
 
-
-
   handleSubmit = evt => {
     evt.preventDefault();
 
-let jugador = {
-  player:{
-    nombre: this.props.values.nombre,
-    nacimiento: this.props.values.nacimiento,
-    posicion: this.props.values.posicion,
-    pais: this.props.values.pais,
-    status: true,
-    peso:this.props.values.peso,
-    estatura:this.props.values.estatura,
-    pie: this.props.values.pie,
-    dorsal: this.props.values.dorsal,
-    sangre : this.props.values.sangre,
-    ficha:{
-      clubanterior: this.props.values.clubanterior,
-      historiamedicapersonal:{
-        enfermedadesprevias : this.props.values.enfermedadesprevias,
-        cirugias: this.props.values.cirugias,
-        hospitalizaciones:this.props.values.hospitalizaciones,
-        alergias:this.props.values.alergias,
-        lesionesgravesprevias:this.props.values.lesionesgravesprevias,
-        medicamentossuplementos:this.props.values.medicamentossuplementos,
-        dolordisconforttoracico:this.props.values.dolordisconforttoracico,
-        sincopelipotimia:this.props.values.sincopelipotimia,           
-        disneafatiga:this.props.values.disneafatiga,               
-        antecedentesoplo:this.props.values.antecedentesoplo ,        
-        antecedentehipertension:this.props.values.antecedentehipertension
-      },
-      historiamedicafamiliar: {
-            muertesubita:this.props.values.muertesubita,                
-            enfermedadcardiaca:this.props.values.enfermedadcardiaca,         
-            enfermedadcardiaca_familiar:this.props.values.enfermedadcardiaca_familiar
-        },
-        examenfisico: {
-            pesoIngreso: this.props.values.pesoIngreso,                 
-            estaturaIngreso: this.props.values.estaturaIngreso,             
-            ritmocardiaco: this.props.values.ritmocardiaco  ,             
-            frecuenciacardiaca: this.props.values.frecuenciacardiaca ,        
-            soplos:this.props.values.soplos ,                      
-            pulsosperifericos:this.props.values.pulsosperifericos ,           
-            estigmas: this.props.values.estigmas ,                   
-            presionarterial:this.props.values.presionarterial,              
-            faringe_amigdalas:this.props.values.faringe_amigdalas ,           
-            pulmonar:this.props.values.pulmonar ,                    
-            abdomen:this.props.values.abdomen ,                    
-            hernias:this.props.values.hernias ,                    
-            musculoesqueletico:this.props.values.musculoesqueletico           
-        },
-        electrocardiogramareposo:this.props.values.electrocardiogramareposo ,
-        otrosexamenes:this.props.values.otrosexamenes,
-        conclusion:this.props.values.conclusion,
-        medico:{
-          nombre:"diex",
-          rut:"1111"
+    if (this.props.values.nombre === "") {
+      alert("Faltan campos por rellenar");
+      return 0;
     }
-        
-    }
-  }
-}
 
+    let jugador = {
+      player: {
+        nombre: this.props.values.nombre,
+        nacimiento: this.props.values.nacimiento,
+        posicion: this.props.values.posicion,
+        pais: this.props.values.pais,
+        peso: this.props.values.peso,
+        estatura: this.props.values.estatura,
+        pie: this.props.values.pie,
+        dorsal: this.props.values.dorsal,
+        sangre: this.props.values.sangre,
+        ficha: {
+          clubanterior: this.props.values.clubanterior,
+          historiamedicapersonal: {
+            enfermedadesprevias: this.props.values.enfermedadesprevias,
+            cirugias: this.props.values.cirugias,
+            hospitalizaciones: this.props.values.hospitalizaciones,
+            alergias: this.props.values.alergias,
+            lesionesgravesprevias: this.props.values.lesionesgravesprevias,
+            medicamentossuplementos: this.props.values.medicamentossuplementos,
+            dolordisconforttoracico: this.props.values.dolordisconforttoracico,
+            sincopelipotimia: this.props.values.sincopelipotimia,
+            disneafatiga: this.props.values.disneafatiga,
+            antecedentesoplo: this.props.values.antecedentesoplo,
+            antecedentehipertension: this.props.values.antecedentehipertension
+          },
+          historiamedicafamiliar: {
+            muertesubita: this.props.values.muertesubita,
+            enfermedadcardiaca: this.props.values.enfermedadcardiaca,
+            enfermedadcardiaca_familiar: this.props.values
+              .enfermedadcardiaca_familiar
+          },
+          examenfisico: {
+            pesoIngreso: this.props.values.pesoIngreso,
+            estaturaIngreso: this.props.values.estaturaIngreso,
+            ritmocardiaco: this.props.values.ritmocardiaco,
+            frecuenciacardiaca: this.props.values.frecuenciacardiaca,
+            soplos: this.props.values.soplos,
+            pulsosperifericos: this.props.values.pulsosperifericos,
+            estigmas: this.props.values.estigmas,
+            presionarterial: this.props.values.presionarterial,
+            faringe_amigdalas: this.props.values.faringe_amigdalas,
+            pulmonar: this.props.values.pulmonar,
+            abdomen: this.props.values.abdomen,
+            hernias: this.props.values.hernias,
+            musculoesqueletico: this.props.values.musculoesqueletico
+          },
+          electrocardiogramareposo: this.props.values.electrocardiogramareposo,
+          otrosexamenes: this.props.values.otrosexamenes,
+          conclusion: this.props.values.conclusion,
+          medico: {
+            nombre: "diex",
+            rut: "1111"
+          }
+        }
+      }
+    };
 
-  console.log('Creando jugador from API!')
-  console.log(jugador)
+    console.log("Creando jugador from API!");
+    console.log(jugador);
     api
-        .crearJugador(jugador)
-        .then(res => {
-          NotificationManager.success('Jugador creado', 'Éxito!', 2000);
-            console.log('Jugador Creado')
-            console.log(res)
-            window.location.href = '/plantel'
-            
-        })
-        .catch(err => {
-          NotificationManager.error('Error al crear jugador', 'Error!');
-            console.log('Error al Crear Jugador ')
-            console.log(err)
-            
-        })
-}
+      .createPlayer(jugador)
+      .then(res => {
+        console.log("Jugador Creado");
+        window.location.href = "/plantel";
+      })
+      .catch(err => {
+        console.log("Error al Crear Jugador ");
+        alert(err);
+        console.log(err);
+      });
+  };
 
   render() {
     const { values, handleChange } = this.props;
@@ -109,7 +106,7 @@ let jugador = {
           <Typography variant="h3" gutterBottom>
             Conclusión
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={3}style={styles.box}>
             <Grid item xs={12}>
               <TextField
                 required
@@ -149,7 +146,8 @@ const styles = {
   },
   box: {
     margin: 5,
-    border: "4px solid"
+    border: "4px solid",
+    borderRadius: "15px"
   },
   container: {
     margin: 15
