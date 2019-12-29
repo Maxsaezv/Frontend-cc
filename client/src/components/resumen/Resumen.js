@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { mainListItems } from "../ficha/listItems";
-import InfoPerfil from "./InfoResumen";
+import Menu  from "./listItems"
+import InfoResumen from "./InfoResumen";
 import "./Resumen.css";
 import LesionActual from "./LesionActual";
 import api from "../../api/api";
@@ -40,7 +40,8 @@ export default function Dashboard() {
   const [state, setState] = useState([]);
   //obtener ID
 
-  let id = window.location.pathname.substring(9);
+  let id = window.location.pathname.substring(9,33);
+  // console.log('resuemen',id)
 
   //llamado Api
   useEffect(() => {
@@ -54,8 +55,9 @@ export default function Dashboard() {
 
   return (
     <Grid container spacing={1}>
+
       <Grid item xs={2}>
-        <List>{mainListItems}</List>
+        <Menu />
       </Grid>
 
       <Grid item xs={10} align="center">
@@ -63,7 +65,7 @@ export default function Dashboard() {
 
         <Grid>
           <Paper className={classes.paper}>
-            <InfoPerfil data={state} />
+            <InfoResumen data={state} />
           </Paper>
         </Grid>
 

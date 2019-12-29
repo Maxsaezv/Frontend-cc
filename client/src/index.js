@@ -20,8 +20,6 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Plantel from "./components/plantel/Plantel";
-import Jugador from "./components/jugador/Jugador";
-import Informe from "./components/informe/Informe";
 import Dashboard from "./components/dashboard/Dashboard";
 import Notfound from "./components/notfound/notFound";
 ///LEO CULIAO///
@@ -69,17 +67,15 @@ const routing = (
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
 
-          <Route exact path="/plantel" component={Plantel} />
-          <Route path="/plantel/ingreso" component={AddPlayer} />
-          <Route path="/plantel/:jugador" component={Resumen} />
-          <Route path="/plantel/informe" component={Informe} />*
-          <Route path="/resumen" component={Resumen} />
-          <Route path="/informe" component={Informe} />
-          <Route path="/historial" component={HistorialLesiones} />
-          <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/ficha" component={Ficha} />
-          </Switch>
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
+          <PrivateRoute exact path="/plantel" component={Plantel} />
+          <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
+          <PrivateRoute exact path="/plantel/:jugador/resumen" component={Resumen} />
+          <PrivateRoute path="/plantel/:jugador/ficha" component={Ficha} />
+          <PrivateRoute path="/plantel/:jugador/historial" component={HistorialLesiones} />
+
+          
           <Route component={Notfound} />
           
         </Switch>

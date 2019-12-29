@@ -37,7 +37,7 @@ class Tabla extends Component {
       <MaterialTable
         onRowClick={(evt, selectedRow) => {
           let id = selectedRow._id
-          window.location.href = `./${id}`
+          window.location.href = `./plantel/${id}/resumen`
         }}
         style={{ minWidth: "85%" }}
         title=""

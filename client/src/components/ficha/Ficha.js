@@ -3,12 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { mainListItems } from './listItems';
-//import { secondaryListItems } from './listItems';
+import Menu from '../resumen/listItems';
 import HMPersonal from './HMPersonal';
 import HMFamiliar from './HMFamiliar';
 import ExFisico from './ExFisico';
-/////
+
 
 const drawerWidth = 240;
 
@@ -35,14 +34,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Resumen() {
+export default function Resumen(props) {
   const classes = useStyles();
-
+  
+  
   return (
     <Grid container spacing ={1} >
       <Grid item xs={2}>
+        <Menu />
         
-        <List>{mainListItems}</List>
       </Grid>
       <Grid item xs={10} align='center'>
         <div className={classes.appBarSpacer} />

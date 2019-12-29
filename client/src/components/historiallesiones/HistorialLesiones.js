@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { mainListItems } from '../ficha/listItems';
+import Menu  from "../resumen/listItems"
+// import { mainListItems } from '../ficha/listItems';
 //import { secondaryListItems } from './listItems';
 import Tablita from '../historiallesiones/Tablita';
 
@@ -38,7 +39,7 @@ export default function Resumen() {
   return (
     <Grid container spacing ={1} >
       <Grid item xs={2}>
-        <List >{mainListItems}</List>
+        <Menu />
       </Grid>
 
       <Grid item xs = {10} align='center'>

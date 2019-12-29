@@ -25,7 +25,6 @@ let jugador = {
     nacimiento: this.props.values.nacimiento,
     posicion: this.props.values.posicion,
     pais: this.props.values.pais,
-    status: true,
     peso:this.props.values.peso,
     estatura:this.props.values.estatura,
     pie: this.props.values.pie,
