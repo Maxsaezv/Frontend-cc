@@ -16,6 +16,11 @@ export class Conclu extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
 
+    if (this.props.values.nombre === "") {
+      alert("Faltan campos por rellenar");
+      return 0;
+    }
+
     let jugador = {
       player: {
         nombre: this.props.values.nombre,
@@ -80,11 +85,11 @@ export class Conclu extends Component {
       .createPlayer(jugador)
       .then(res => {
         console.log("Jugador Creado");
-        console.log(res);
         window.location.href = "/plantel";
       })
       .catch(err => {
         console.log("Error al Crear Jugador ");
+        alert(err);
         console.log(err);
       });
   };
@@ -97,7 +102,7 @@ export class Conclu extends Component {
           <Typography variant="h3" gutterBottom>
             Conclusión
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={3}style={styles.box}>
             <Grid item xs={12}>
               <TextField
                 required
@@ -137,7 +142,8 @@ const styles = {
   },
   box: {
     margin: 5,
-    border: "4px solid"
+    border: "4px solid",
+    borderRadius: "15px"
   },
   container: {
     margin: 15

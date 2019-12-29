@@ -150,8 +150,11 @@ const styles = {
     margin : 15,
   },
   box :  {
-    margin: 5,
+    margin: 0,
     border: '4px solid',
+    borderRadius:"15px"
+
+    
 
   },
   container :{

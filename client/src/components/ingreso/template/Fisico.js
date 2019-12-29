@@ -209,7 +209,8 @@ const styles = {
   },
   box: {
     margin: 10,
-    border: "4px solid"
+    border: "4px solid",
+    borderRadius: "15px"
   },
   container: {
     margin: 15
