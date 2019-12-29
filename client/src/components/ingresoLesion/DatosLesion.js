@@ -17,22 +17,22 @@ export class Datos extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <div style = {styles.container}>
+      <div style={styles.container}>
         <MuiThemeProvider>
           <React.Fragment>
-            <Typography variant="h4" style = {styles.title} align ="center" gutterBottom>
+            <Typography variant="h4" style={styles.title} align="center" gutterBottom>
               Datos Nueva Lesión
             </Typography>
 
-            <Grid container spacing={3} style = {styles.box}>
+            <Grid container spacing={3} style={styles.box}>
               <Grid item xs={12}>
                 <TextField
                   required
                   id="nombre"
                   name="nombre"
                   label="Diagnóstico Lesión"
-                  onChange = {handleChange('nombre')}
-                  defaultValue ={values.nombre}
+                  onChange={handleChange('nombre')}
+                  defaultValue={values.nombre}
                   fullWidth
                 />
               </Grid>
@@ -43,11 +43,12 @@ export class Datos extends Component {
                   id="fecha"
                   name="fecha"
                   label="Fecha"
-                  onChange = {handleChange('fecha')}
-                  defaultValue ={values.fecha}
+                  onChange={handleChange('fecha')}
+                  defaultValue={values.fecha}
                   type='date'
+                  InputLabelProps={{ shrink: true }}
                   fullWidth
-                  
+
                 />
               </Grid>
 
@@ -57,8 +58,8 @@ export class Datos extends Component {
                   id="tipo"
                   name="tipo"
                   label="Tipo"
-                  onChange = {handleChange('tipo')}
-                  defaultValue ={values.tipo}
+                  onChange={handleChange('tipo')}
+                  defaultValue={values.tipo}
                   fullWidth
                 />
               </Grid>
@@ -69,8 +70,8 @@ export class Datos extends Component {
                   id="gravedad"
                   name="gravedad"
                   label="Gravedad"
-                  onChange = {handleChange('gravedad')}
-                  defaultValue ={values.gravedad}
+                  onChange={handleChange('gravedad')}
+                  defaultValue={values.gravedad}
                   fullWidth
                 />
               </Grid>
@@ -81,8 +82,8 @@ export class Datos extends Component {
                   id="lateralidad"
                   name="lateralidad"
                   label="Lateralidad"
-                  onChange = {handleChange('lateralidad')}
-                  defaultValue ={values.lateralidad}
+                  onChange={handleChange('lateralidad')}
+                  defaultValue={values.lateralidad}
                   fullWidth
                 />
               </Grid>
@@ -93,8 +94,8 @@ export class Datos extends Component {
                   id="zona"
                   name="zona"
                   label="Zona"
-                  onChange = {handleChange('zona')}
-                  defaultValue ={values.zona}
+                  onChange={handleChange('zona')}
+                  defaultValue={values.zona}
                   fullWidth
                 />
               </Grid>
@@ -105,8 +106,8 @@ export class Datos extends Component {
                   id="origen"
                   name="origen"
                   label="Origen"
-                  onChange = {handleChange('origen')}
-                  defaultValue ={values.origen}
+                  onChange={handleChange('origen')}
+                  defaultValue={values.origen}
                   fullWidth
                 />
               </Grid>
@@ -117,8 +118,8 @@ export class Datos extends Component {
                   id="entorno"
                   name="entorno"
                   label="Entorno"
-                  onChange = {handleChange('entorno')}
-                  defaultValue ={values.entorno}
+                  onChange={handleChange('entorno')}
+                  defaultValue={values.entorno}
                   fullWidth
                 />
               </Grid>
@@ -129,8 +130,8 @@ export class Datos extends Component {
                   id="dinamica"
                   name="dinamica"
                   label="Dinámica"
-                  onChange = {handleChange('dinamica')}
-                  defaultValue ={values.dinamica}
+                  onChange={handleChange('dinamica')}
+                  defaultValue={values.dinamica}
                   fullWidth
                 />
               </Grid>
@@ -141,12 +142,12 @@ export class Datos extends Component {
                   id="actividad"
                   name="actividad"
                   label="Actividad"
-                  onChange = {handleChange('actividad')}
-                  defaultValue ={values.actividad}
+                  onChange={handleChange('actividad')}
+                  defaultValue={values.actividad}
                   fullWidth
                 />
               </Grid>
-            
+
 
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -154,8 +155,8 @@ export class Datos extends Component {
                   id="mecanismo"
                   name="mecanismo"
                   label="Mecanismo"
-                  onChange = {handleChange('mecanismo')}
-                  defaultValue ={values.mecanismo}
+                  onChange={handleChange('mecanismo')}
+                  defaultValue={values.mecanismo}
                   fullWidth
                 />
               </Grid>
@@ -166,8 +167,8 @@ export class Datos extends Component {
                   id="superficie"
                   name="superficie"
                   label="Superficie"
-                  onChange = {handleChange('superficie')}
-                  defaultValue ={values.superficie}
+                  onChange={handleChange('superficie')}
+                  defaultValue={values.superficie}
                   fullWidth
                 />
               </Grid>
@@ -178,8 +179,8 @@ export class Datos extends Component {
                   id="clasificacion"
                   name="clasificacion"
                   label="Clasificación"
-                  onChange = {handleChange('clasificacion')}
-                  defaultValue ={values.clasificacion}
+                  onChange={handleChange('clasificacion')}
+                  defaultValue={values.clasificacion}
                   fullWidth
                 />
               </Grid>
@@ -190,10 +191,11 @@ export class Datos extends Component {
                   id="reingresoestimado"
                   name="reingresoestimado"
                   label="Reingreso Estimado"
-                  onChange = {handleChange('reingresoestimado')}
-                  defaultValue ={values.reingresoestimado}
+                  onChange={handleChange('reingresoestimado')}
+                  defaultValue={values.reingresoestimado}
                   fullWidth
-                  type = 'date'
+                  InputLabelProps={{ shrink: true }}
+                  type='date'
                 />
               </Grid>
 
@@ -203,19 +205,19 @@ export class Datos extends Component {
                   id="partidosperdidos"
                   name="partidosperdidos"
                   label="Cantidad Partidos Perdidos"
-                  onChange = {handleChange('partidosperdidos')}
-                  defaultValue ={values.partidosperdidos}
+                  onChange={handleChange('partidosperdidos')}
+                  defaultValue={values.partidosperdidos}
                   fullWidth
                 />
               </Grid>
 
-          
-              <Grid item xs = {12} align='Right'>
-                <Button style = {styles.button} onClick = {this.next} align = "right" >
+
+              <Grid item xs={12} align='Right'>
+                <Button style={styles.button} onClick={this.next} align="right" >
                   Next
-                </Button> 
+                </Button>
               </Grid>
-              
+
 
             </Grid>
           </React.Fragment>
@@ -226,25 +228,25 @@ export class Datos extends Component {
 }
 
 const styles = {
-  button : {
-    margin:15,
-    background : 'black',
-    color : 'white',
-    
+  button: {
+    margin: 15,
+    background: 'black',
+    color: 'white',
+
   },
-  title : {
-    margin : 15,
+  title: {
+    margin: 15,
   },
-  box :  {
+  box: {
     margin: 0,
     border: '4px solid',
-    borderRadius:"15px"
+    borderRadius: "15px"
 
-    
+
 
   },
-  container :{
-    margin :15
+  container: {
+    margin: 15
   }
 };
 

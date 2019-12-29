@@ -68,7 +68,7 @@ const routing = (
 
             <PrivateRoute exact path="/plantel" component={Plantel} />
             <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
-            <PrivateRoute path="/ingresoLesion" component={AddInjury} />
+            <PrivateRoute exact path="/plantel/:jugador/nuevaLesion" component={AddInjury} />
             <PrivateRoute
               exact
               path="/plantel/:jugador/resumen"

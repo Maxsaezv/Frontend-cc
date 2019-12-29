@@ -9,21 +9,21 @@ import api from "../../api/api";
 export default function Tabla(props) {
   const ref = React.createRef()
   const [players, setPlayers] = useState([]);
-  
+
   let url = window.location.pathname;
   console.log("URL TABLA", url);
-  
+
   useEffect(() => {
     let lista = api
-    .getAll()
-    .then(res => {
-      setPlayers(res.body);
+      .getAll()
+      .then(res => {
+        setPlayers(res.body);
         console.log(res.body)
       })
       .catch(err => {
         console.log(err);
       });
-  },[]);
+  }, []);
 
   return (
     <MaterialTable
@@ -40,7 +40,7 @@ export default function Tabla(props) {
           field: "posicion",
           cellStyle: { fontSize: 18 }
         },
-        { title: "Nombre", field: "nombre",cellStyle: { fontSize: 18 } },
+        { title: "Nombre", field: "nombre", cellStyle: { fontSize: 18 } },
         {
           title: "Edad",
           field: "nacimiento",
@@ -51,7 +51,7 @@ export default function Tabla(props) {
             if (rawData.nacimiento === undefined) {
               return "-";
             } else {
-              return (((hoy - inicio) / 86400000) / 365).toFixed(1).slice(0,2) + " Años";
+              return (((hoy - inicio) / 86400000) / 365).toFixed(2).slice(0, 2) + " Años";
             }
           }
         },
@@ -90,12 +90,12 @@ export default function Tabla(props) {
             rowData.status === "Disponible"
               ? ""
               : rowData.status === "Reintegro"
-              ? "lightyellow"
-              : "#FF5A55"
+                ? "lightyellow"
+                : "#FF5A55"
         }),
-        headerStyle: { fontSize: 18  },
+        headerStyle: { fontSize: 18 },
         sorting: true,
-        
+
       }}
       actions={[
         {

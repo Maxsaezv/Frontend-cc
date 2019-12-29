@@ -4,6 +4,7 @@ import { Typography, Button, Grid } from "@material-ui/core";
 export class Confirmacion extends Component {
 
   render() {
+    let url = window.location.pathname.substring(0, 33);
     const { values } = this.props;
     return (
       <div>
@@ -13,9 +14,9 @@ export class Confirmacion extends Component {
 
         <Grid item xs={12} align="Right">
 
-            
-          <Button  href = {"/plantel"} color={"black"}>
-               Continuar 
+
+          <Button href={url + '/resumen'} color={"black"}>
+            Continuar
           </Button>
         </Grid>
       </div>
