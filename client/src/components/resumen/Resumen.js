@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Menu  from "./listItems"
+import Menu from "./listItems";
 import InfoResumen from "./InfoResumen";
 import "./Resumen.css";
 import LesionActual from "./LesionActual";
@@ -40,22 +39,22 @@ export default function Dashboard() {
   const [state, setState] = useState([]);
   //obtener ID
 
-  let id = window.location.pathname.substring(9,33);
+  let id = window.location.pathname.substring(9, 33);
   // console.log('resuemen',id)
 
   //llamado Api
   useEffect(() => {
     let datos = api.getJugador({ player_id: id }).then(res => {
-      // console.log("res", res.body.player);
       setState(res.body.player);
+    }).catch(err=>{
+      console.log(err)
     });
   }, []);
 
   // console.log("estado", state);
 
   return (
-    <Grid container spacing={1}>
-
+    <Grid container spacing={1} style={{ maxWidth: "90%" }}>
       <Grid item xs={2}>
         <Menu />
       </Grid>

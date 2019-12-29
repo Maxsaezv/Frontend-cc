@@ -14,10 +14,10 @@ export default class Tablita extends Component {
   render() {
     return (
      <React.Fragment>
-       <Title >Historial de Lesiones</Title>
+       
        <MaterialTable
          style={{ minWidth: "85%", fontSize: "2.0rem" }}
-         title=""
+         title={"Historial de Lesiones"}
          tableRef={this.tableRef}
          columns={[
            { title: "Fecha", field: "date", type: "date"},
@@ -52,7 +52,8 @@ export default class Tablita extends Component {
                 : rowData.gravedad === "Mediana"
                 ? "lightyellow"
                 : "#FF5A55"
-          })
+              }),
+            headerStyle: { fontSize: 18  }
         }}
         actions={[
           {

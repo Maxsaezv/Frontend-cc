@@ -64,13 +64,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
 //props vienen del componente global Resumen
 export default function Orders(props) {
-  const classes = useStyles();
   //para no escribir tantas veces props.data => datos.<variable>
-  let datos = props.data
-  console.log(datos)
+  let datos = props.data;
+
+  let hoy = new Date();
+  let inicio = new Date(datos.nacimiento);
+
+  console.log(datos);
+
   return (
     <React.Fragment>
       <Title>Información General</Title>
@@ -80,63 +83,58 @@ export default function Orders(props) {
             <TableCell>
               <b>NOMBRE:</b>{" "}
             </TableCell>
-            
-          <TableCell align="center">{datos.nombre}</TableCell>
-            
+
+            <TableCell align="center">{datos.nombre}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>POSICIÓN:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.posicion}</TableCell>
-            
+
+            <TableCell align="center">{datos.posicion}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>EDAD:</b>
             </TableCell>
-           
-              <TableCell align="center">{datos.nacimiento}</TableCell>
-       
+
+            <TableCell align="center">
+              {((hoy - inicio) / 86400000 / 365).toFixed(0)}
+            </TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>ESTATURA:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.estatura} metros</TableCell>
-         
+
+            <TableCell align="center">{datos.estatura} metros</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PESO:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.peso} Kg</TableCell>
-          
+
+            <TableCell align="center">{datos.peso} Kg</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PAÍS:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.pais}</TableCell>
-          
+
+            <TableCell align="center">{datos.pais}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PIE:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.pie}</TableCell>
-         
+
+            <TableCell align="center">{datos.pie}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>
@@ -150,35 +148,31 @@ export default function Orders(props) {
             <TableCell>
               <b>ALERGIAS:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.alergias}</TableCell>
-            
+
+            <TableCell align="center">{datos.alergias}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>
               <b>SANGRE:</b>
             </TableCell>
-            
-              <TableCell align="center">{datos.sangre}</TableCell>
-         
+
+            <TableCell align="center">{datos.sangre}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>DORSAL:</b>
             </TableCell>
-           
-              <TableCell align="center">{datos.dorsal}</TableCell>
-        
+
+            <TableCell align="center">{datos.dorsal}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>ESTADO:</b>
             </TableCell>
-           
+
             <TableCell align="center">{datos.status}</TableCell>
-       
           </TableRow>
         </TableHead>
         <TableBody>

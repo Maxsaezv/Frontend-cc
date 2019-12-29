@@ -8,11 +8,11 @@ class Footer extends Component {
       <div>
         <Typography variant="body2" color="textSecondary" align="center">
           {"Copyright © "}
-          <Link color="inherit" href="https://material-ui.com/">
-            Your Website
+          <Link color="inherit">
+            Feria Tics
+            {" " + new Date().getFullYear()}
+            {"."}
           </Link>{" "}
-          {new Date().getFullYear()}
-          {"."}
         </Typography>
       </div>
     );

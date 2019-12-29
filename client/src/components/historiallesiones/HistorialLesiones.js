@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Menu  from "../resumen/listItems"
@@ -37,7 +36,7 @@ export default function Resumen() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing ={1} >
+    <Grid container spacing ={1} style={{ maxWidth: "90%" }} >
       <Grid item xs={2}>
         <Menu />
       </Grid>

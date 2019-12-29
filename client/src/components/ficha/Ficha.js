@@ -39,7 +39,7 @@ export default function Resumen(props) {
   
   
   return (
-    <Grid container spacing ={1} >
+    <Grid container spacing ={1} style={{ maxWidth: "90%" }}>
       <Grid item xs={2}>
         <Menu />
         
