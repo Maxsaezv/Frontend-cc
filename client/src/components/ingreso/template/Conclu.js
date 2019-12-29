@@ -15,8 +15,6 @@ export class Conclu extends Component {
     this.props.prevStep();
   };
 
-
-
   handleSubmit = evt => {
     evt.preventDefault();
 
