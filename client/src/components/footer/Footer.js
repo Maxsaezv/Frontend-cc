@@ -6,9 +6,9 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Typography variant="body2" color="textSecondary" align="center">
+        <Typography variant="body2" align="center" style={{ color: 'white' }}>
           {"Copyright © "}
-          <Link color="inherit">
+          <Link style={{ color: 'white' }}>
             Feria Tics
             {" " + new Date().getFullYear()}
             {"."}

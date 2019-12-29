@@ -5,23 +5,27 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import { useState } from 'react';
+
 
 // Generate Sales Data
-function createData(id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos, DolorToracico
-  , SincopeLipotimia, DisneaDesproporcionada, AntecedenteSoplo, AntecedenteHipertension) {
-  return { id, enfermedadprevia, cirugia, hospitalizaciones, alergias, lesiones, medicamentos,
-     DolorToracico, SincopeLipotimia, DisneaDesproporcionada, AntecedenteSoplo, AntecedenteHipertension  };
+function createData(id) {
+  return {
+    id
+  };
 }
 
 const rows = [
-  createData(0, 'DataEnfermedad', 'DataCirugía','DataHospitalizaciones', 'DataAlergias', 'DataLesiones',
-   'DataMedicamentos/Suplementos','Data DolorToracico', 'Data Sincope/lipotimia', 'Data Disnea Desproporcionada'
-   , 'Data Antecedente Soplo Cardiaco', 'Data Antecedente Hipertensión Arterial'),
+  createData(0),
 
 ];
 
 
-export default function Orders() {
+export default function Orders(props) {
+  const [state, setState] = useState(props);
+
+  console.log('Personal', state)
+  let hm = state.data.historiamedicapersonal
   return (
     <React.Fragment>
       <Title>Historia Médica Personal</Title>
@@ -29,56 +33,55 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell> <b> Interrogante Médica</b></TableCell>
-            {/* <TableCell ><b>Resultado</b></TableCell> */}
-            <TableCell align ='center'><b>Resultado</b></TableCell>
+            <TableCell align='center'><b>Resultado</b></TableCell>
           </TableRow>
-          
+
 
           <TableRow>
             <TableCell>Enfermedades Previas:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.enfermedadprevia}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.enfermedadesprevias}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Cirugía:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.cirugia}</TableCell>
-          ))}
-            </TableRow>
+
+            <TableCell align='center'>{hm.cirugia}</TableCell>
+
+          </TableRow>
 
 
           <TableRow>
             <TableCell>Hospitalizaciones:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.hospitalizaciones}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.hospitalizaciones}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Alergias:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.alergias}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.alergias}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Lesiones graves previas (>1 mes sin jugar):</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.lesiones}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.lesionesgravesprevias}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Medicamentos / Suplementos:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.medicamentos}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.medicamentossuplementos}</TableCell>
+
           </TableRow>
 
           <TableRow>
@@ -88,40 +91,40 @@ export default function Orders() {
 
           <TableRow>
             <TableCell>Dolor/disconfort torácico con ejercicio:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.DolorToracico}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.dolordisconforttoracico}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Síncope/Lipotimia:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.SincopeLipotimia}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.sincopelipotimia}</TableCell>
+
           </TableRow>
 
           <TableRow>
             <TableCell>Disnea/Fatiga desproporcionada con ejercicio:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.DisneaDesproporcionada}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.disneafatiga}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Antecedentes de soplo cardiaco:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.AntecedenteSoplo}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.antecedentesoplo}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Antecedentes de Hipertensión Arterial:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.AntecedenteHipertension}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.antecedentehipertension}</TableCell>
+
           </TableRow>
 
 
@@ -133,7 +136,7 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-  
+
     </React.Fragment>
   );
 }

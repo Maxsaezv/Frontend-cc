@@ -5,19 +5,26 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import { useState } from 'react';
 
 // Generate Sales Data
 function createData(id, MuerteSubita, ECardiacaDisc, ECardiacaConoc) {
-  return { id, MuerteSubita, ECardiacaDisc, ECardiacaConoc};
+  return { id, MuerteSubita, ECardiacaDisc, ECardiacaConoc };
 }
 
 const rows = [
-  createData(0, 'DataMuerteSubita Familiares', 'Data Enfermedad Cardiaca que genere discapacidad','Data Enfermedad Cardiaca conocida en familiares'),
+  createData(0, 'DataMuerteSubita Familiares', 'Data Enfermedad Cardiaca que genere discapacidad', 'Data Enfermedad Cardiaca conocida en familiares'),
 
 ];
 
 
-export default function Orders() {
+export default function Orders(props) {
+  const [state, setState] = useState(props);
+  console.log('Familiar', state)
+
+
+
+  let hm = state.data.historiamedicafamiliar
   return (
     <React.Fragment>
       <Title>Historia Médica Familiar</Title>
@@ -25,31 +32,31 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell> <b> Interrogante Médica</b></TableCell>
-            <TableCell align= 'center'><b>Resultado</b></TableCell>
+            <TableCell align='center'><b>Resultado</b></TableCell>
           </TableRow>
 
 
           <TableRow>
             <TableCell>Muerte súbita (cardiovascular) en familiares de primer grado (padres, hermanos, tíos): </TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.MuerteSubita}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.muertesubita}</TableCell>
+
           </TableRow>
 
 
           <TableRow>
             <TableCell>Enfermedad cardiaca que cause discapacidad en familiares de primer grado:</TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.ECardiacaDisc}</TableCell>
-          ))}
-            </TableRow>
+
+            <TableCell align='center'>{hm.enfermedadcardiaca}</TableCell>
+
+          </TableRow>
 
 
           <TableRow>
             <TableCell>Enfermedad cardiaca conocida en familiares (miocardiopatía, arritmias, canalopatías, Sd Marfán): </TableCell>
-            {rows.map(row => (
-              <TableCell align= 'center'>{row.ECardiacaConoc}</TableCell>
-          ))}
+
+            <TableCell align='center'>{hm.enfermedadcardiaca_familiar}</TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
@@ -60,7 +67,7 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-     
+
     </React.Fragment>
   );
 }

@@ -7,6 +7,72 @@ import {
   Button
 } from "@material-ui/core";
 
+
+const posicion = [
+  {
+    label: 'Portero',
+    value: 'PO'
+  },
+  {
+    label: 'Defensa',
+    value: 'DEF'
+  },
+  {
+    label: 'Medicampista',
+    value: 'MC'
+  },
+  {
+    label: 'Delantero',
+    value: 'DEL'
+  }
+]
+const pie = [
+  {
+    label: 'Derecho',
+    value: 'Derecho'
+  },
+  {
+    label: 'Izquierdo',
+    value: 'Izquierdo'
+  }
+]
+const sangre = [
+  {
+    label: 'A+',
+    value: 'A+'
+  },
+  {
+    label: 'A-',
+    value: 'A-'
+  },
+  {
+    label: 'B+',
+    value: 'B+'
+  },
+  {
+    label: 'B-',
+    value: 'B-'
+  },
+  {
+    label: 'O+',
+    value: 'O+'
+  },
+  {
+    label: 'O-',
+    value: 'O-'
+  },
+  {
+    label: 'AB+',
+    value: 'AB+'
+  },
+  {
+    label: 'AB-',
+    value: 'AB-'
+  }
+]
+
+
+
 export class Datos extends Component {
   next = e => {
     e.preventDefault();
@@ -17,22 +83,22 @@ export class Datos extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <div style = {styles.container}>
+      <div style={styles.container}>
         <MuiThemeProvider>
           <React.Fragment>
-            <Typography variant="h4" style = {styles.title} align ="center" gutterBottom>
+            <Typography variant="h4" style={styles.title} align="center" gutterBottom>
               Datos Personales
             </Typography>
 
-            <Grid container spacing={3} style = {styles.box}>
+            <Grid container spacing={3} style={styles.box}>
               <Grid item xs={12}>
                 <TextField
                   required
                   id="nombre"
                   name="nombre"
                   label="Nombre Completo"
-                  onChange = {handleChange('nombre')}
-                  defaultValue ={values.nombre}
+                  onChange={handleChange('nombre')}
+                  defaultValue={values.nombre}
                   fullWidth
                 />
               </Grid>
@@ -43,9 +109,10 @@ export class Datos extends Component {
                   id="nacimiento"
                   name="nacimiento"
                   label="Fecha de Nacimiento"
-                  onChange = {handleChange('nacimiento')}
-                  defaultValue ={values.nacimiento}
-                  type = "date"
+                  onChange={handleChange('nacimiento')}
+                  defaultValue={values.nacimiento}
+                  type="date"
+                  InputLabelProps={{ shrink: true }}
                   fullWidth
                 />
               </Grid>
@@ -53,37 +120,60 @@ export class Datos extends Component {
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
+                  select
                   id="posicion"
                   name="posicion"
                   label="Posición"
-                  onChange = {handleChange('posicion')}
-                  defaultValue ={values.posicion}
+                  onChange={handleChange('posicion')}
+                  value={values.posicion}
                   fullWidth
-                />
+                >
+                  {posicion.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+
+                </TextField>
               </Grid>
 
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
+                  select
                   id="pie"
                   name="pie"
                   label="Pie Dominante"
-                  onChange = {handleChange('pie')}
-                  defaultValue ={values.pie}
+                  onChange={handleChange('pie')}
+                  value={values.pie}
                   fullWidth
-                />
+                >
+                  {pie.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+
+                </TextField>
               </Grid>
 
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
+                  select
                   id="sangre"
                   name="sangre"
                   label="Tipo de sangre"
-                  onChange = {handleChange('sangre')}
-                  defaultValue ={values.sangre}
+                  onChange={handleChange('sangre')}
+                  value={values.sangre}
                   fullWidth
-                />
+                >
+                  {sangre.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </TextField>
               </Grid>
 
               <Grid item xs={12} sm={6}>
@@ -92,8 +182,8 @@ export class Datos extends Component {
                   id="pais"
                   name="pais"
                   label="País"
-                  onChange = {handleChange('pais')}
-                  defaultValue ={values.pais}
+                  onChange={handleChange('pais')}
+                  defaultValue={values.pais}
                   fullWidth
                 />
               </Grid>
@@ -104,9 +194,9 @@ export class Datos extends Component {
                   id="dorsal"
                   name="dorsal"
                   label="Dorsal"
-                  onChange = {handleChange('dorsal')}
-                  defaultValue ={values.dorsal}
-                  type = "number"
+                  onChange={handleChange('dorsal')}
+                  defaultValue={values.dorsal}
+                  type="number"
                   fullWidth
                 />
               </Grid>
@@ -117,19 +207,19 @@ export class Datos extends Component {
                   id="clubanterior"
                   name="clubanterior"
                   label="Club de procedencia"
-                  onChange = {handleChange('clubanterior')}
-                  defaultValue ={values.clubanterior}
+                  onChange={handleChange('clubanterior')}
+                  defaultValue={values.clubanterior}
                   fullWidth
                 />
               </Grid>
 
-          
-              <Grid item xs = {12} align='Right'>
-                <Button style = {styles.button} onClick = {this.next} align = "right" >
+
+              <Grid item xs={12} align='Right'>
+                <Button style={styles.button} onClick={this.next} align="right" >
                   Next
-                </Button> 
+                </Button>
               </Grid>
-              
+
 
             </Grid>
           </React.Fragment>
@@ -140,25 +230,25 @@ export class Datos extends Component {
 }
 
 const styles = {
-  button : {
-    margin:15,
-    background : 'black',
-    color : 'white',
-    
+  button: {
+    margin: 15,
+    background: 'black',
+    color: 'white',
+
   },
-  title : {
-    margin : 15,
+  title: {
+    margin: 15,
   },
-  box :  {
+  box: {
     margin: 0,
     border: '4px solid',
-    borderRadius:"15px"
+    borderRadius: "15px"
 
-    
+
 
   },
-  container :{
-    margin :15
+  container: {
+    margin: 15
   }
 };
 
