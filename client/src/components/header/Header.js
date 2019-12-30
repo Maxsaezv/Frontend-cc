@@ -9,6 +9,7 @@ import { Link } from '@material-ui/core';
 import GroupIcon from '@material-ui/icons/Group';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -26,7 +27,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="inherit">
         <Toolbar>
         <Button color="inherit">
           <Link href="javascript:window.history.back()" color='inherit'>

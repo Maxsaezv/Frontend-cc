@@ -53,12 +53,12 @@ if (localStorage.jwtToken) {
 const routing = (
   <Provider store={store}>
     <Router>
-      <div className="body">
+      <div>
         <div>
           <Header />
         </div>
 
-        <div className="content">
+        <div>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -82,6 +82,9 @@ const routing = (
 
             <Route component={Notfound} />
           </Switch>
+        </div>
+        <div className="footer">
+          <Footer />
         </div>
       </div>
     </Router>
