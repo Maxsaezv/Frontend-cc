@@ -50,7 +50,7 @@ export class Personal extends Component {
               <TextField
                 required
                 id="alergias"
-                label="alergias"
+                label="Alergias"
                 onChange={handleChange("alergias")}
                 defaultValue={values.alergias}
                 fullWidth

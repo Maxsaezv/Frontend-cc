@@ -86,7 +86,7 @@ export class Conclu extends Component {
     console.log("Creando jugador from API!");
     console.log(jugador);
     api
-      .createPlayer(jugador)
+      .crearJugador(jugador)
       .then(res => {
         console.log("Jugador Creado");
         window.location.href = "/plantel";

@@ -9,14 +9,6 @@ import { Link } from '@material-ui/core';
 import GroupIcon from '@material-ui/icons/Group';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-import Logo from "../../assets/images/Logo.png";
-import { Grid, Typography } from "@material-ui/core";
-
-class Header extends Component {
-  constructor(props) {
-    super(props);
-
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,

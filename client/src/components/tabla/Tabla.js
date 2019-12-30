@@ -15,7 +15,7 @@ export default function Tabla(props) {
 
   useEffect(() => {
     let lista = api
-      .getAll()
+      .getActivos()
       .then(res => {
         setPlayers(res.body);
         console.log(res.body)
