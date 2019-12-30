@@ -8,6 +8,10 @@ import HomeIcon from '@material-ui/icons/Home';
 import { Link } from '@material-ui/core';
 import GroupIcon from '@material-ui/icons/Group';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { logoutUser } from "../../actions/authActions";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 const useStyles = makeStyles(theme => ({
@@ -20,14 +24,19 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  
 }));
 
-export default function ButtonAppBar() {
-  const classes = useStyles();
+function ButtonAppBar(props) {
+  const onLogoutClick = e => {
+    e.preventDefault();
+    props.logoutUser();
+  };
 
+  const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" style={{background:"black"}}>
         <Toolbar>
         <Button color="inherit">
           <Link href="javascript:window.history.back()" color='inherit'>
@@ -47,8 +56,26 @@ export default function ButtonAppBar() {
             <HomeIcon />Inicio
               </Link>
           </Button>
+          <Button color="inherit" onClick={onLogoutClick}>
+            <Link href='#' color="inherit">
+            <ExitToAppIcon/>Salir
+              </Link>
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
   );
 };
+
+ButtonAppBar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(ButtonAppBar)
