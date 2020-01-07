@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MaterialTable from "material-table";
-import Title from '../ficha/Title.js';
+
 
 
 
@@ -13,23 +13,23 @@ export default class Tablita extends Component {
 
   render() {
     return (
-     <React.Fragment>
-       <Title >Historial de Lesiones</Title>
-       <MaterialTable
-         style={{ minWidth: "85%", fontSize: "2.0rem" }}
-         title=""
-         tableRef={this.tableRef}
-         columns={[
-           { title: "Fecha", field: "date", type: "date"},
-           { title: "Tipo", field: "tipo" },
-           { title: "Zona", field: "zona" },
-           { title: "Der/Izq", field: "lado"},
-           { title: "Gravedad", field: "gravedad"},
-           { title: "Tiempo de Recuperación", field: "trec"},
-      
+      <React.Fragment>
 
-           ]}
-            data={[
+        <MaterialTable
+          style={{ minWidth: "85%", fontSize: "2.0rem" }}
+          title={"Historial de Lesiones"}
+          tableRef={this.tableRef}
+          columns={[
+            { title: "Fecha", field: "date", type: "date" },
+            { title: "Tipo", field: "tipo" },
+            { title: "Zona", field: "zona" },
+            { title: "Der/Izq", field: "lado" },
+            { title: "Gravedad", field: "gravedad" },
+            { title: "Tiempo de Recuperación", field: "trec" },
+
+
+          ]}
+          data={[
             { date: "01/12/2019", tipo: "Desgarro", zona: "Muslo", lado: "Derecho", gravedad: "Grave", trec: "2 Meses" },
             { date: "19/07/2018", tipo: "Fractura", zona: "Tibia", lado: "Izquierda", gravedad: "Grave", trec: "8 Meses" },
             { date: "22/10/2018", tipo: "Dislocación", zona: "Hombro", lado: "Derecho", gravedad: "Mediana", trec: "1 Semana" },
@@ -40,40 +40,41 @@ export default class Tablita extends Component {
             { date: "03/09/2011", tipo: "Contusión", zona: "Codo", lado: "Izquierdo", gravedad: "Mediana", trec: "1 Semana" },
             { date: "09/07/2011", tipo: "Contractura", zona: "Muslo", lado: "Izquierda", gravedad: "Baja", trec: "3 Semanas" },
             { date: "11/02/2010", tipo: "Esguince", zona: "Muñeca", lado: "Izquierda", gravedad: "Baja", trec: "3 Semanas" },
-            
-                 ]}
+
+          ]}
           options={{
             actionsColumnIndex: -1,
             paging: false,
-              rowStyle: rowData => ({
-            backgroundColor:
-            rowData.gravedad === "Baja"
-                ? ""
-                : rowData.gravedad === "Mediana"
-                ? "lightyellow"
-                : "#FF5A55"
-          })
-        }}
-        actions={[
-          {
-            icon: "more",
-            tooltip: "Más Información",
-            onClick: (e, rowData) => console.log(e, rowData)
-          },
-     
-          {
-            icon: "refresh",
-            tooltip: "Refresh Data",
-            isFreeAction: true,
-            onClick: () => this.tableRef.current
-          },
-          {
-            icon: "delete",
-            tooltip: "Borrar",
-            onClick: (e, rowData) => console.log(e, rowData)
-          }
-        ]}
-      />
+            rowStyle: rowData => ({
+              backgroundColor:
+                rowData.gravedad === "Baja"
+                  ? ""
+                  : rowData.gravedad === "Mediana"
+                    ? "lightyellow"
+                    : "#FF5A55"
+            }),
+            headerStyle: { fontSize: 18 }
+          }}
+          actions={[
+            {
+              icon: "more",
+              tooltip: "Más Información",
+              onClick: (e, rowData) => console.log(e, rowData)
+            },
+
+            {
+              icon: "refresh",
+              tooltip: "Refresh Data",
+              isFreeAction: true,
+              onClick: () => this.tableRef.current
+            },
+            {
+              icon: "delete",
+              tooltip: "Borrar",
+              onClick: (e, rowData) => console.log(e, rowData)
+            }
+          ]}
+        />
       </React.Fragment>
     );
   }

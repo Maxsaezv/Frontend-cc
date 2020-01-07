@@ -25,6 +25,10 @@ exports.create = (req, res) => {
   player.sangre = formData.sangre ? formData.sangre : null;
   player.isapre = formData.isapre ? formData.isapre : null;
   player.pie = formData.pie ? formData.pie : null;
+  player.dorsal = formData.dorsal ? formData.dorsal : null;
+  player.peso = formData.peso ? formData.peso : null;
+  player.estatura = formData.estatura ? formData.estatura : null;
+  player.status = formData.status ? formData.status : "Disponible";
   //FICHA
   player.ficha.clubanterior = formData.ficha.clubanterior ? formData.ficha.clubanterior : null;
   player.ficha.historiamedicapersonal.enfermedadesprevias = formData.ficha.historiamedicapersonal.enfermedadesprevias ? formData.ficha.historiamedicapersonal.enfermedadesprevias : null;

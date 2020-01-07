@@ -27,10 +27,11 @@ return (
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                color: "white"
               }}
               onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              className="btn btn-large waves-effect waves-light hoverable black accent-3"
             >
               Salir
             </button>
@@ -40,9 +41,10 @@ return (
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                color: "white"
               }}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              className="btn btn-large waves-effect waves-light hoverable black accent-3"
             >
               Entrar
             </button>

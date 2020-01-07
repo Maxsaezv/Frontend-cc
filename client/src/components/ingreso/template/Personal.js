@@ -25,7 +25,7 @@ export class Personal extends Component {
           >
             Historial Médico Personal
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={3} style={styles.box}>
             <Grid item xs={12}>
               <TextField
                 required
@@ -50,7 +50,7 @@ export class Personal extends Component {
               <TextField
                 required
                 id="alergias"
-                label="alergias"
+                label="Alergias"
                 onChange={handleChange("alergias")}
                 defaultValue={values.alergias}
                 fullWidth
@@ -84,7 +84,7 @@ export class Personal extends Component {
             </Typography>
           </Grid>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={3}style={styles.box}>
             <Grid item xs={12} sm={6}>
               <TextField
                 required
@@ -165,8 +165,9 @@ const styles = {
     margin: 15
   },
   box: {
-    margin: 5,
-    border: "4px solid"
+    margin: 0,
+    border: "4px solid",
+    borderRadius: "15px"
   },
   container: {
     margin: 15

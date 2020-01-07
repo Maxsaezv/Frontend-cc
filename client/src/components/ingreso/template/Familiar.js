@@ -21,7 +21,7 @@ export class Familiar extends Component {
             Historial Médico Personal
           </Typography>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={3}style={styles.box}>
             <Grid item xs={12}>
               <TextField
                 required
@@ -81,7 +81,8 @@ const styles = {
   },
   box: {
     margin: 5,
-    border: "4px solid"
+    border: "4px solid",
+    borderRadius: "15px"
   },
   container: {
     margin: 15

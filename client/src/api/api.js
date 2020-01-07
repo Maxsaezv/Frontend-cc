@@ -5,8 +5,11 @@ import { buildApi, get, post, patch, destroy } from 'redux-bees';
 
 const apiEndpoints = {
     ////Jugador
+    getView: {method: get, path: '/players/:player_id'},
+    getAll: {method: get, path: '/players'},
+    createPlayer: {method: post, path: '/players'},
     crearJugador: {method: post, path: '/players'},//ex-createPlayers
-    getActivos: {method: get, path: '/players'}, //ex-getPlayers
+    getActivos: {method: get, path: '/players'}, //ex-getAll
     getInactivos: {method: get, path: '/players/inactivos'},
     getJugador: {method: get, path: '/players/:player_id'},//ex-getView
     desvincularJugador: {method: destroy, path: '/players/:player_id'},

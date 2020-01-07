@@ -11,12 +11,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-// React Notification
-import 'react-notifications/lib/notifications.css';
-import { NotificationContainer } from 'react-notifications';
-
-
-
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Landing from "./components/layout/Landing";
@@ -25,21 +19,17 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Plantel from "./components/plantel/Plantel";
-import Jugador from "./components/jugador/Jugador";
-import Informe from "./components/informe/Informe";
 import Dashboard from "./components/dashboard/Dashboard";
 import Notfound from "./components/notfound/notFound";
 ///LEO CULIAO///
 import HistorialLesiones from "./components/historiallesiones/HistorialLesiones";
 import Resumen from "./components/resumen/Resumen";
-import Ficha from "./components/ficha/Ficha";///EX-DASHBOARD.LP
+import Ficha from "./components/ficha/Ficha"; ///EX-DASHBOARD.LP
 ////URLEY CULIAO/////
 import AddPlayer from "./components/ingreso/AddPlayer";
+import AddInjury from "./components/ingresoLesion/AddInjury";
 
 // ReactDOM.render( <App/> , document.getElementById('root'));
-
-
-
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -50,7 +40,7 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -62,41 +52,44 @@ if (localStorage.jwtToken) {
 
 const routing = (
   <Provider store={store}>
-  <Router>
-    <div className="body">
-      <div className="header">
-        <Header />
-      </div>
+    <Router>
+      <div>
+        <div>
+          <Header />
+        </div>
 
-      <div className="content">
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+        <div>
           <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/ficha" component={Ficha} />
-              <PrivateRoute exact path="/plantel" component={Plantel} />
-              <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
-              <PrivateRoute path="/plantel/:jugador" component={Jugador} />
-              <PrivateRoute path="/plantel/informe" component={Informe} />
-              <PrivateRoute path="/resumen" component={Resumen} />
-              <PrivateRoute path="/informe" component={Informe} />
-              <PrivateRoute path="/historial" component={HistorialLesiones} />
-          </Switch>
-          <Route component={Notfound} />
-        </Switch>
-        <NotificationContainer />
-      </div>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
 
-      <div className="footer">
-        <Footer />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
+            <PrivateRoute exact path="/plantel" component={Plantel} />
+            <PrivateRoute path="/plantel/ingreso" component={AddPlayer} />
+            <PrivateRoute exact path="/plantel/:jugador/nuevaLesion" component={AddInjury} />
+            <PrivateRoute
+              exact
+              path="/plantel/:jugador/resumen"
+              component={Resumen}
+            />
+            <PrivateRoute path="/plantel/:jugador/ficha" component={Ficha} />
+            <PrivateRoute
+              path="/plantel/:jugador/historial"
+              component={HistorialLesiones}
+            />
+
+            <Route component={Notfound} />
+          </Switch>
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-    </div>
-  </Router>
+    </Router>
   </Provider>
 );
-
 
 ReactDOM.render(routing, document.getElementById("root"));
 

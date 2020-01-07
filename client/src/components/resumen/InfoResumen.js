@@ -64,12 +64,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
 //props vienen del componente global Resumen
 export default function Orders(props) {
-  const classes = useStyles();
   //para no escribir tantas veces props.data => datos.<variable>
-  let datos = props.data
+  let datos = props.data;
+
+  let hoy = new Date();
+  let inicio = new Date(datos.nacimiento);
+
+  console.log(datos);
+
   return (
     <React.Fragment>
       <Title>Información General</Title>
@@ -79,106 +83,96 @@ export default function Orders(props) {
             <TableCell>
               <b>NOMBRE:</b>{" "}
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Nombre}</TableCell>
-            ))}
-            
+
+            <TableCell align="center">{datos.nombre}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>POSICIÓN:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Posicion}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.posicion}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>EDAD:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Edad}</TableCell>
-            ))}
+
+            <TableCell align="center">
+              {((hoy - inicio) / 86400000 / 365).toFixed(0)}
+            </TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>ESTATURA:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Estatura}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.estatura} metros</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PESO:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Peso}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.peso} Kg</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PAÍS:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Pais}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.pais}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>PIE:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Pie}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.pie}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>
               <b>ISAPRE:</b>
             </TableCell>
             {rows.map(row => (
-              <TableCell align="center">{row.Isapre}</TableCell>
+              <TableCell align="center">{datos.isapre}</TableCell>
             ))}
           </TableRow>
           <TableRow>
             <TableCell>
               <b>ALERGIAS:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Alergias}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.alergias}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>
               <b>SANGRE:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Sangre}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.sangre}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>DORSAL:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Dorsal}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.dorsal}</TableCell>
           </TableRow>
 
           <TableRow>
             <TableCell>
               <b>ESTADO:</b>
             </TableCell>
-            {rows.map(row => (
-              <TableCell align="center">{row.Estado}</TableCell>
-            ))}
+
+            <TableCell align="center">{datos.status}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
