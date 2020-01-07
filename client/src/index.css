@@ -47,27 +47,25 @@ code {
 
 div.header {
   background-color: black;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 10vh;
   margin-bottom: 15px;
-} 
+}
 
 div.content {
   overflow: auto;
-  border: 1px solid black;
-  margin: 10px;
+  /* border: 1px solid black; */
+  /* margin: 10px; */
   height: 80vh;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   display: flex;
 }
 
 div.footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  height: 20px;
-  background: #222;
   color: white;
+  margin-top: 15px;
+  /* border: 1px solid black; */
+  height: 6.8vh;
+  background-color: black;
 }

@@ -58,7 +58,7 @@ const routing = (
           <Header />
         </div>
 
-        <div>
+        <div className = "content">
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
