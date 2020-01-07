@@ -1,24 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "frontend-cc",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.3.3",
-    "@material-ui/icons": "^4.2.1",
-    "material-table": "^1.50.0",
-    "mui-datatables": "^2.10.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1"
-  },
-=======
   "name": "colocoloapi",
   "version": "1.0.0",
   "description": "API for Colo-Colo medical App using MongoDB",
   "main": "index.js",
->>>>>>> preMaster
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index",
