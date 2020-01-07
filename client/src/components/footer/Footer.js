@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 class Footer extends Component {
   render() {
     return (
-      <div>
+      <div >
         <Typography variant="body2" align="center" style={{ color: 'white' }}>
           {"Copyright © "}
           <Link style={{ color: 'white' }}>

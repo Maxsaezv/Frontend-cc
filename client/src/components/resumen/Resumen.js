@@ -68,7 +68,7 @@ export default function Dashboard() {
           </Paper>
         </Grid>
 
-        <Grid>
+        <Grid style={{marginTop:10}}>
           <Paper className={classes.paper}>
             <LesionActual />
           </Paper>

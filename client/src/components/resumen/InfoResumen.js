@@ -72,8 +72,6 @@ export default function Orders(props) {
   let hoy = new Date();
   let inicio = new Date(datos.nacimiento);
 
-  console.log(datos);
-
   return (
     <React.Fragment>
       <Title>Información General</Title>

@@ -27,6 +27,7 @@ exports.create = (req, res) => {
   let formData = req.body.injury;
   
   injury.nombre = formData.nombre;
+  injury.fecha = formData.fecha ? formData.fecha : null;
   injury.reintegroestimado = formData.reintegroestimado ? formData.reintegroestimado : null;
   injury.lateralidad = formData.lateralidad ? formData.lateralidad : null;
   injury.partidosPerdidos = formData.partidosPerdidos ? formData.partidosPerdidos : null;
@@ -95,6 +96,7 @@ exports.update = (req, res) => {
     let formData = req.body.injury;
 
     injury.nombre = formData.nombre? formData.nombre : injury.nombre;
+    injury.fecha = formData.fecha ? formData.fecha : injury.fecha;
     injury.reintegroestimado = formData.reintegroestimado ? formData.reintegroestimado : injury.reintegroestimado;
     injury.lateralidad = formData.lateralidad ? formData.lateralidad : injury.lateralidad;
     injury.partidosPerdidos = formData.partidosPerdidos ? formData.partidosPerdidos : injury.partidosPerdidos;

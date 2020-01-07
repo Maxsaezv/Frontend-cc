@@ -54,7 +54,7 @@ const routing = (
   <Provider store={store}>
     <Router>
       <div>
-        <div>
+        <div className = "header">
           <Header />
         </div>
 
@@ -83,6 +83,7 @@ const routing = (
             <Route component={Notfound} />
           </Switch>
         </div>
+
         <div className="footer">
           <Footer />
         </div>
